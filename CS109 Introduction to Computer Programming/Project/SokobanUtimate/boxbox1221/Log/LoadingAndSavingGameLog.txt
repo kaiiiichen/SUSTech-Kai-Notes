@@ -1,0 +1,9 @@
+Log about loading and saving game part;
+
+1. while newing a user, we will create 15 files recording each level for the user.
+    1.1 we have a special user called user0001, whose file will never be used unless when we want tot refer to the initial frame by reading the file.
+        Rmk: this is a simple backup user.
+    1.2 we have the recording like : 0 / 0 / new / {...}, the first integer records te steps now, the second records the time and 'new' means new game.
+    1.3 Warning: it's important to have a status representative, which will be used in the loading part for checking whether the user has played before.
+2. while saving files,
+    2.1 the saving method could only be used during the playing process (for victory and failure, we need to reset the status part).

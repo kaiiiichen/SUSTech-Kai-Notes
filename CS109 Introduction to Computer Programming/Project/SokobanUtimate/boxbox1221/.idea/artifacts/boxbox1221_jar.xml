@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="boxbox1221:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/boxbox1221_jar</output-path>
+    <root id="archive" name="boxbox1221.jar">
+      <element id="module-output" name="boxbox1221" />
+    </root>
+  </artifact>
+</component>
