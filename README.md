@@ -1,5 +1,5 @@
 # SUSTech-Kai-Notes
 
-I started this repository in 2026 and it is where I stored my study notes and materials during my study at Southern University of Science and Technology(SUSTech). I also listed courses I took from other colleges/universities.
+$This repository, launched in 2026, collects my study notes and materials from courses at Southern University of Science and Technology (SUSTech) and other universities.$
 
-As a public repository, it guarantees that all the resources could be used safely under the lisence's protection. Some courseware is all-right-reserved by the instructor and is for personal use only.
+$All resources are shared under the protection of their respective licenses. Some courseware remains all-rights-reserved by instructors and is for personal use only.$
