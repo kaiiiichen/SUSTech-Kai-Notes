@@ -1,0 +1,871 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{scalerel,stackengine}
+\usepackage{esint}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=magenta, urlcolor=cyan}
+\usepackage{titlesec}
+
+\titleformat{\section}
+{\normalfont\bfseries\LARGE}
+{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\bfseries\Large}
+{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\normalfont\itshape\bfseries\large}
+{\thesubsubsection}{1em}{}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\eps}{\varepsilon}
+
+\numberwithin{equation}{section}
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{MA337 Real Analysis (H) Notes}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+\setlength{\headsep}{20pt}
+\setlength{\footskip}{25pt}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[C]{MA337 Real Analysis (H) Notes}
+  \fancyfoot[C]{\thepage}
+}
+
+\begin{document}
+
+\title{MA337 Real Analysis (H) Notes}
+\author{Kai Chen}
+\date{\today}
+
+\maketitle
+
+\begin{abstract}
+  These notes are compatible to the MA337 course (2025 Fall).
+\end{abstract}
+
+\clearpage
+\pagenumbering{roman}
+\tableofcontents
+
+\clearpage
+\pagenumbering{arabic}
+
+\section{Crash Course on Set Theory}
+
+\clearpage
+
+\section{Metric Spaces}
+
+\clearpage
+
+\section{Continuous Maps}
+
+\clearpage
+
+\section{Compactness}
+
+\clearpage
+
+\section{Lebesgue Measure and Integration}
+
+\clearpage
+
+\subsection{Systems of Sets: Semi-rings, Rings, Algebras, $\sigma$-Algebras, Borel $\sigma$-Algebra, Measures}
+
+\begin{definition}
+  (Semi-Ring of Sets)
+
+  A system of sets $S$ is called a \textbf{semi-ring} if it satisfies the following two axioms:
+  \begin{enumerate}
+    \item If $A, B \in S$, then $A \cap B \in S$.
+    \item If $A, B \in S$, then there exist disjoint sets $A_1, A_2, \ldots, A_n \in S$ such that 
+    
+    $A \setminus B = \bigsqcup_{i=1}^n A_i$.
+  \end{enumerate}
+\end{definition}
+
+\begin{example}
+  (semi-open cells in $\R^n$)
+
+  $I_1, I_2, \ldots, I_n$: intervals in $\R$.
+  $C:=I_1 \times I_2 \times \ldots \times I_n$ is called a \textbf{cell} in $\R^n$.
+
+  \textbf{semi-open interval}: an interval that is closed at one end and open at the other end, e.g., $[a, b)$ or $(a, b]$.
+
+  Let $S$ be the collection of all semi-open cells in $\R^d$ (not required to be finite!), i.e. $S = \{[a_1,b_1)\times\cdots\times[a_n,b_n): a_i,b_i\in\mathbb{R}, a_i<b_i\}$. Then $S$ is a semi-ring.
+
+  \underline{Warning}: Be cautious about the directions of semi-open cells! The directions of all cells must coincide.
+\end{example}
+
+\begin{remark}
+  \underline{Question}: Can we take all closed/open cells in $R^n$?
+
+  \underline{Answer}: NO! For example, $[0,1] \cap [1,2] = \{1\}$, $(0,1) \setminus (1/2,1) = (0,1/2]$, both result in some elements not in the original system.
+
+\end{remark}
+
+\begin{proposition}
+  If $S$ is a semi-ring, then
+  \begin{enumerate}
+    \item $\emptyset \in S$.
+    \item Axiom 2 can be strenghtened to: $\forall A \in S$, $\forall A_1, A_2, \ldots, A_n \in S, A_j \in A, \forall j, disjoint$, there exist disjoint sets $A_{m+1}, A_{m+2}, \ldots, A_s \in S$ such that $A = \bigsqcup_{i=1}^s A_i$.
+  \end{enumerate}
+  \begin{proof}
+    1. $\emptyset = A \setminus A. \forall A \in S$.
+
+    2. One can prove by induction on $m$: splitting the whole area $A$ into disjoint parts. It is easier to prove for the semi-ring $\{$all cells in $\R^n\}$.
+  \end{proof}
+\end{proposition}
+
+\begin{remark}
+  We now show that with axiom 1 and the strenghtened condition above we could say $S$ is a semi-ring.
+  \begin{proof}
+    Now axiom 1 is satisfied.
+
+    Suppose $A, B \in S$, then $A \setminus B = A \ (A \cap B)$. Let $A_1 = B, n = 1$. By our strenghthened condition, one could find disjoint sets $A_2, A_3, \ldots, A_s \in S$, s.t. $A = \bigsqcup_{i=1}^s A_i$, i.e. $A \setminus B = \bigsqcup_{i=2}^s A_i$. $\checkmark$
+  \end{proof}
+  Thus, we have the following equivalent definition for semi-rings.
+\end{remark}
+
+\begin{definition}
+  (Semi-Ring of Sets - Alternative Definition)
+
+  A system of sets $S$ is called a \textbf{semi-ring} if it satisfies the following two axioms:
+  \begin{enumerate}
+    \item If $A, B \in S$, then $A \cap B \in S$.
+    \item $\forall A \in S$, $\forall A_1, A_2, \ldots, A_n \in S, A_j \subset A, \forall j, disjoint$, there exist disjoint sets
+
+      $A_{m+1}, A_{m+2}, \ldots, A_s \in S$ such that $A = \bigsqcup_{i=1}^s A_i$.
+  \end{enumerate}
+\end{definition}
+
+\begin{definition}
+  (Semi-ring with Unity)
+
+  A semi-ring $S$ is called a \textbf{semi-ring with unity} if $S \in 2^\Omega (\leftrightarrow \forall A \in S, A \in \Omega) $ and $\Omega \in S$ for some set $\Omega$. $\Omega$ is called the \textbf{unity} of $S$. Indeed, $\Omega \cap A = A, \forall A \in S$.
+\end{definition}
+
+\begin{example}
+    \begin{enumerate}
+        \item (a semi-ring with unity)
+        
+        The semi-ring of all semi-open cells in $\R^n$ (to be more precise, we need to add the element $\R^n$ into it) is a semi-ring with unity $\R^n$.
+        \item (a semi-ring WITHOUT a unity)
+        
+        The semi-ring of all finite semi-open cells in $\R^n$: NO unity ($\R^n$)!
+    \end{enumerate}
+\end{example}
+
+\begin{definition}
+  (Ring of Sets)
+
+  A system of sets $\mathcal{R}$ is called a \textbf{ring} if it satisfies the following two axioms:
+  \begin{enumerate}
+    \item $\forall A, B \in \mathcal{R}$, $A \cap B \in \mathcal{R}$.
+    \item $\forall A, B \in \mathcal{R}$, $A \triangle B = (A \setminus B) \cup (B \setminus A) \in \mathcal{R}$.
+  \end{enumerate}
+\end{definition}
+
+\begin{remark}
+  In fact, a ring $R$ is closed under set difference and finite unions.
+  \begin{enumerate}
+    \item $\forall A, B \in R$, $A \setminus B = A \triangle (A \cap B) \in R$.
+    \item $\forall A, B \in R$, $A \cup B = (A \triangle B) \triangle (A \cap B) \in R$.
+  \end{enumerate}
+
+  Conversely, we have
+  \begin{enumerate}
+    \item $\forall A, B \in R$, $A \cap B =  ((A \cup B) \setminus (A \setminus B)) \setminus (B \setminus A)\in R$.
+    \item $\forall A, B \in R$, $A \triangle B = (A \cup B) \setminus (A \cap B) \in R$.
+  \end{enumerate}
+\end{remark}
+
+\begin{definition}
+  (Ring of Sets - Alternative Definition)
+
+  A system of sets $\mathcal{R}$ is called a \textbf{ring} if it satisfies the following two axioms:
+  \begin{enumerate}
+    \item $\forall A, B \in \mathcal{R}$, $A \setminus B \in \mathcal{R}$.
+    \item $\forall A, B \in \mathcal{R}$, $A \cup B \in \mathcal{R}$.
+  \end{enumerate}
+\end{definition}
+
+\begin{remark}
+  As a result, we arrive with the same definition of ring requiring closeness under set difference and finite unions.
+\end{remark}
+
+\begin{example}
+  (a semi-ring but NOT a ring)
+
+  The semi-ring of all cells in $\R^n$: not ensuring the closeness under union!
+\end{example}
+
+\begin{definition}
+    (Algebra)
+    
+    A ring with unity is called an \textbf{algebra of sets}.
+\end{definition}
+
+\begin{example}
+  (a ring but NOT an algebra)
+
+  Consider $R = \{ A \subset \N : |A| < +\infty \}$.
+  $R$ is a ring, but $\N \notin R$, which means it doesn't have a unity.
+\end{example}
+
+\begin{proposition}
+  \begin{enumerate}
+    \item A ring is a semi-ring.
+    \item $\forall$ system of sets $P$, $\exists$ a \textbf{minimal ring} $\mathcal{R}(P) \supset P$.
+  \end{enumerate}
+  \begin{proof}
+    1. Let $\mathcal{R}$ be a ring. Then $\forall A, B \in \mathcal{R}$, $A \setminus B = A \setminus B (!)= A \triangle (A \cap B) \in \mathcal{R}.$
+
+    2. Start with $\mathcal{R}_0 = 2^\Omega$, where $\Omega$ is the union of all sets in $P$. Let $\{R_\alpha\}$ be the collection of all rings containing $P$. Then
+    \( \mathcal{R}(P) := \bigcap_\alpha R_\alpha \) is the minimal ring containing $P$ (it is clearly again a ring!).
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  Let $S$ be a semi-ring, then
+  $$\mathcal{R}(S) = \{\bigcup_{j=1}^m A_j, A_j \in S, m \in \N: arbitrary\} \Leftrightarrow \{\bigsqcup_{j=1}^s A_j, A_j \in S, s \in \N: arbitrary\}$$
+  \begin{proof}
+    "$\Leftrightarrow$":
+
+    Firstly, the claimed system $\mathcal{R}(S)$ is indeed a ring.
+
+    $A = \sqcup_{j=1}^S A_j, B = \sqcup_{i = 1}^m B_i, A \cap B = \sqcup_{i,j}(A_j \cap B_i) \in S \subset \mathcal{R}(S)$.
+
+    $\Rightarrow A \triangle B = (A \setminus B) \cap (B \setminus A)  = \sqcup_{j=1}^m \cap_{i=1}^m (A_j \setminus B_i) \in S \subset \mathcal{R}(S)$.
+
+    Thus, $\mathcal{R}(S)$ is a ring.
+
+    Next, $\forall$ other ring $\tilde{\mathcal{R}}(S)$ containing $S$, it must contain all elements of $\mathcal{R}(S)$.
+
+    i.e. $\tilde{\mathcal{R}}(S) \supset \mathcal{R}(S)$ $\Rightarrow \mathcal{R}(S)$ is the minimal ring containing $S$.
+  \end{proof}
+\end{proposition}
+
+\begin{definition}
+  A system of sets $\mathcal{A}$ is called a \textbf{$\sigma$-algebra} if $\mathcal{A} \subset 2^{\Omega}, \Omega \in \mathcal{A}, \mathcal{A}$ is an algebra with unity $\Omega$, and $\forall A_1, A_2, \ldots$ (finite or infinite family of sets!) with $\forall j: A_j \in \mathcal{A}$ it holds $\cup_{j=1}^{\infty} A_j \in \mathcal{A}$.
+\end{definition}
+
+\begin{proposition}
+  \begin{enumerate}
+    \item A $\sigma$-algebra is closed under taking the implement: $A^c = \Omega \setminus A \in \mathcal{A}$ since a $\sigma$-algebra is a ring with unity $\Omega$. It is closed under set difference.
+    \item $\emptyset \in \mathcal{A}$ since $\emptyset = \Omega^c$ or $\emptyset = \Omega \setminus \Omega$.
+    \item A $\sigma$-algebra is closed under finite or countable union thanks to its definition and the fact that $\emptyset \in \mathcal{A}$
+    \item A $\sigma$-algebra is closed under finite or countable intersection:
+
+      $\forall A_1, A_2, \ldots$ (finite or infinite family of sets!) with $\forall j: A_j \in \mathcal{A}$, we have
+
+      $\cap_{j=1}^{\infty} A_j = \Omega \setminus \cup_{j=1}^{\infty} (\Omega \setminus A_j) \in \mathcal{A}$
+    \item A $\sigma$-algebra is closed under countable symmetric difference.
+  \end{enumerate}
+\end{proposition}
+
+\begin{remark}
+  \underline{Question}: We have so many seemingly equilvalent conditions for the definition of a $\sigma$-algebra, what are the least number of conditions we need to define/prove a $\sigma$-algebra?
+
+  \underline{Answer}: I prefer the following three minimal conditions:
+
+  1. $\Omega \in \mathcal{A}$.
+
+  2. If $A \in \mathcal{A}$, then $A^c = (\Omega \setminus A) \in \mathcal{A}$.
+
+  3. If $A_1, A_2, \ldots \in \mathcal{A}$, then $\bigcup_{j=1}^\infty A_j \in \mathcal{A}$.
+\end{remark}
+
+\begin{proposition}
+  $\forall S \in 2^\Omega, \exists !$ minimum $\sigma$-algebra $\mathcal{A}(S) \supset S$.
+  \begin{proof}
+    Similar as the proof for $\mathcal{R}(S)$.
+  \end{proof}
+\end{proposition}
+
+\begin{remark}
+  \underline{Upshot 1}:
+
+  In general:
+
+  System of sets$\Rightarrow$ Semi-ring $\Rightarrow$ Ring $\Rightarrow$ Algebra with unity $\Rightarrow \sigma$-Algebra.
+
+  Now, start with a semi-ring with unity $S$
+
+  $\rightarrow$ could generate a ring $\mathcal{R}(S)$ (still equipped with a unity $\Omega$)
+
+  $\rightarrow$ A ring with unity is actually an algebra with unity!
+
+  $\rightarrow$ An algebra of sets: $\mathcal{A}(R(S)) = \mathcal{A}(S)$.
+\end{remark}
+
+\begin{remark}
+  \underline{Upshot 2}:
+
+  A system of sets $S$
+
+  $\rightarrow$ ensuring the two axioms: closeness under intersection and being able to be decomposed into some disjoint subsets
+
+  $\rightarrow$ A semi-ring!
+
+  $\rightarrow$ could generate a ring $\mathcal{R}(S)$!
+
+  $\rightarrow$ A ring which satisfies closeness under: (intersection and symmetric difference) or (union and difference)
+
+  $\rightarrow$ equip with a unity
+
+  $\rightarrow$ An algebra of sets!
+\end{remark}
+
+\begin{definition}
+  (Borel $\sigma$-algebra)
+
+  The \textbf{Borel $\sigma$-algebra} on $\R^n$ is defined as the minimum $\sigma$-algebra containing all open sets in $\R^n$, denoted as $\mathcal{B}(\R^n)$.
+\end{definition}
+
+\begin{remark}
+  Note that $\mathcal{B}(\R^d)$ also contains all closed sets in $\R^d$ since it is closed under difference (open $\rightarrow$ semi-open $\rightarrow$ closed).
+
+  Thus, an alternate definition of $\mathcal{B}(\R^d)$ is the minimum $\sigma$-algebra containing all closed sets in $\R^d$.
+\end{remark}
+
+\begin{definition}
+  (Measure on a Semi-Ring)
+
+  Let $S$ be a semi-ring. A function $\mu: S \rightarrow [0, + \infty)$ is called a \textbf{(finitely additive) measure on $S$} if it satisfies the following two axioms:
+  \begin{enumerate}
+    \item (Non-negativity) $\forall A \in S, \mu(A) \geq 0$.
+    \item (Finite Additivity) If $A, A_1, A_2, \ldots, A_n \in S$ such that $A = \bigsqcup_{j=1}^n A_j$, then
+      \(\mu(A) = \sum_{j=1}^n \mu(A_j).\)
+  \end{enumerate}
+\end{definition}
+
+\begin{proposition}
+  \begin{enumerate}
+    \item $\mu(\emptyset) = 0$.
+    \item $\forall A, B \in S, A \subset B$, we have $\mu(A) \leq \mu(B)$.
+  \end{enumerate}
+  \begin{proof}
+    \begin{enumerate}
+      \item $\emptyset = \emptyset \cup \emptyset \Rightarrow \mu(\emptyset) = 2\mu(\emptyset)$.
+      \item Since $S$ is a semi-ring, there exist $A_1, A_2, \ldots, A_m \in S$, s.t. $B \setminus A = \bigsqcup_{l=1}^p A_j$
+
+        $\Rightarrow B = A \bigsqcup (\bigsqcup_{j=1}^p A_j) \Rightarrow \mu(B) = \mu(A) + \Sigma_{j=1}^p \mu(A_j) \geq \mu(A)$.
+    \end{enumerate}
+  \end{proof}
+\end{proposition}
+
+\begin{example}
+  On the semi-ring $\{$all finite semi-open cells in $\R^n\}$, we define a measure as follows:
+
+  A finite semi-open cell $C = I_1 \times I_2 \times \ldots \times I_n$ in $\R^n$, define $\mu(C) := l(I_1) \times l(I_2) \times \ldots \times l(I_n)$, where $l(I) := $length of $I$ and we are measuring the cell's "volume".
+
+  This $\mu$ is called the \textbf{Lebesgue measure on all finite semi-open cells in $\R^n$}.
+\end{example}
+
+\begin{proposition}
+  $\forall$ measure on a semi-ring $S$ can be extended (with identical proerties) to $R(S)$.
+  \begin{proof}
+    For $A = \sqcup_{j=1}^m A_j \in \mathcal{R}(S)$ with $A_j \in \mathcal{R}(S)$, define $\mu(A) := \Sigma_{j=1}^m \mu(A_j)$. (We need to firstly deal with $A_j \in S$, and then gradually scan the whole $\mathcal{R}(S)$ based on measure-already-defined sets.)
+
+    \underline{Well-defined (Correctness)}: Suppose $A = \sqcup_{j=1}^p A_j = \sqcup_{i=1}^s A_i^{\prime}$. We have
+
+    $\Sigma_{j=1}^p \mu(A_j) = \{$using the finite additivity of $\mu$, and $A_j = A_j \cap A = \sqcup_{i=1}^s (A_j \cap A_i^{\prime})\}$ $= \Sigma_{j=1}^p (\Sigma_{i=1}^s \mu(A_j \cap A_i^{\prime})) = \Sigma_{i=1}^s (\Sigma_{j=1}^p \mu(A_i^{\prime} \cap A_j)) = \Sigma_{i=1}^s \mu(A_i^{\prime})$. $\checkmark$
+
+    \underline{Non-negativity}: Clearly, $\mu(A) \geq 0$. $\checkmark$
+
+    \underline{Finite Additivity}: Suppose $A, B \in R(S): A \cap B = \emptyset$.
+    $A = \sqcup_{j=1}^p A_j, B = \sqcup_{i=1}^q B_j$, with $A_j, B_i \in S$.
+
+    $\Rightarrow A \sqcup B = (\sqcup_{j=1}^p A_j) \sqcup (\sqcup_{i=1}^q B_i)$
+
+    $\Rightarrow \mu(A \sqcup B) = \Sigma_{j=1}^p \mu(A_j) + \Sigma_{i=1}^q \mu(B_i)$
+
+    Same for finite union of sets. $\checkmark$
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  (Proerties of a Measure on a ring $\mathcal{R}$)
+
+  \begin{enumerate}
+    \item $\mu(\emptyset) = 0$.
+    \item If $A, B \in R, A \subset B$, then $\mu(A) \leq \mu(B)$.
+    \item (\textbf{Semi-Additivity}) If $A \subset \cup_{j=1}^n A_j$, with $A, A_j \in R$, then $\mu(A) \leq \Sigma_{j=1}^n \mu(A_j)$.
+
+      Now, switch from $\bigcup_{j=1}^n$ to $\bigsqcup_{j=1}^n$:
+
+      Set $A_1^{\prime} := A_1, A_2^{\prime} := A_2 \setminus A_1, A_3^{\prime} := A_3 \setminus \cup_{j=1}^2 A_j, \ldots$
+
+      Now, we have $\bigcup_{j=1}^n A_j = \bigsqcup_{j=1}^n A_j^{\prime}$.
+
+      Thus, $A \subset \bigsqcup_{j=1}^n A_j^{\prime}$ (even more: $A = (\bigsqcup_{j=1}^n A_j^{\prime}) \bigcap A = \bigsqcup_{j=1}^n (A_j^{\prime} \bigcap A)$ !).
+
+      Then, \(\mu(A) = \bigsqcup_{j=1}^n \mu(A_j^{\prime} \bigcap A) \leq \Sigma_{j=1}^n \mu(A_j^{\prime}) \leq \Sigma_{j=1}^n \mu(A_j).\)
+  \end{enumerate}
+\end{proposition}
+
+\begin{remark}
+  \underline{Question}: Could prop. 5.30 (3) maintain for a measure on a semi-ring? Why?
+
+  \underline{Answer}: NO!!! The key difference between a semi-ring and a ring is that: in a semi-ring $S$, the diffence between sets may not belong to $S$, which means though they could be represented as disjoint unions of sets in $S$, they do NOT have measure defined on them! Then the inequality chain cannot go forward anymore.
+\end{remark}
+
+\clearpage
+
+\subsection{Lebesgue Extension of a $\sigma$-Additive Measure}
+
+\begin{definition}
+    ($\sigma$-additivity)
+    
+    A measure $\mu$ on a semi-ring $S$ is called to satisfy \textbf{$\sigma$-additivity} 
+    
+    \textbf{(countable-additivity)} if for any $A \in S$, $\{A_j\}_{j=1}^{\infty} \subset S$ such that $A = \bigsqcup_{j=1}^\infty A_j$, we have
+  \(\mu(A) = \sum_{j=1}^\infty \mu(A_j).\)
+\end{definition}
+
+\begin{remark}
+    A $\sigma$-algebra is not necessarily $\sigma$-additive! 
+    
+    Also note that $\sigma$-additivity always implies
+    
+    \textbf{semi-$\sigma$-additivity}: $\forall A \subset \bigcup_{j=1}^{\infty} A_j, A,A_j \in S, \mu(A) \leq \Sigma_{j=1}^{\infty}\mu(A_j)$.
+
+    And more importantly, finite additivity implies semi-$\sigma$-additivity also!
+\end{remark}
+
+\begin{example}
+  \begin{enumerate}
+    \item Let $\Omega = \N$, $S = 2^\Omega$. Define $\mu(A) := \Sigma_{j \in A} p_j$, where $p_j$ is the ''weight'' assigned to element $j \in \N$ satisfying $\Sigma_{j=1}^\infty p_j = 1$ (or any finite number). Then $\mu$ is a $\sigma$-additive measure on $S$.
+    \item Let $\Omega = \N$, $S = 2^\Omega$. Define $\mu(A) := |A|$ (if $A$ is infinite, $\mu(A) := +\infty$). Then $\mu$ is a $\sigma$-additive measure on $S$. (View "weight" being $1$ for all elements. This is the case violating the requirement "$\Sigma_{j=1}^\infty p_j =$ any finite number" in example 1.)
+    \item (Lebesgue measure on all finite semi-open cells in $R^n$)
+
+      Let $S = \{$all finite semi-open cells in $\R^n \}$. We know that $S$ is a semi-ring.
+
+      $\mu(C) := l(I_1) \times l(I_2) \times \ldots \times l(I_n)$, where $l(I) := $length of $I$.
+
+      Then $\mu$ is a $\sigma$-additive measure on $S$.
+      \begin{proof}
+        We already know that $\mu$ is a measure on the semi-ring $S$. $\mu$ is finitely additive.
+
+        Suppose $A \in S, \{A_j\}_{j=1}^{\infty} \in S, A = \sqcup_{j=1}^{\infty} A_j$.
+
+        WTS: $\mu(A) = \Sigma_{j=1}^{\infty} A_j$
+
+        \underline{Step 1}: $\forall n \in \N, A \supset \sqcup_{j=1}^n A_j$
+
+        $\Rightarrow \Sigma_{j=1}^n \mu(A_j) = \{finit-additivity\} =\mu(\sqcup_{j=1}^n A_j) \leq \mu(A)$
+
+        $\Rightarrow$ Take limit $n \rightarrow \infty$, we have $\Sigma_{j=1}^{\infty} \mu(A_j) \leq \mu(A)$. $\checkmark$
+
+        \underline{Step 2}: Let $A = [\alpha_1,\beta_1) \times \cdots \times [\alpha_n,\beta_n)$ be a finite semi-open cell in $\mathbb{R}^n$, and suppose $A = \bigsqcup_{j=1}^{\infty} A_j,$ where each $A_j$ is also a semi-open cell, and the $A_j$'s are pairwise disjoint.
+        
+        \underline{Step 2.1}: Partition of $A$ into uniform subcells.
+        
+        For each integer $m \ge 1$, divide each coordinate interval $[\alpha_i,\beta_i)$ into $m$ equal subintervals: $I^{(m)}_{i,k_i} = \big[\alpha_i + k_i(\beta_i-\alpha_i)/m,\; \alpha_i + (k_i+1)(\beta_i-\alpha_i)/m\big), \qquad k_i = 0,1,\dots,m-1$.
+        
+        Define the finite family of subcells $\mathcal{Q}_m = \Big\{ Q_{k}^{(m)} = I^{(m)}_{1,k_1} \times \cdots \times I^{(m)}_{n,k_n} : 0 \le k_i \le m-1 \Big\}$.
+        
+        Then the cells in $\mathcal{Q}_m$ are pairwise disjoint and satisfy $A = \bigsqcup_{Q \in \mathcal{Q}_m} Q$.
+
+        In fact, $|\mathcal{Q}_m| = m^n$, which is finite. By finite additivity of $\mu$, $\mu(A) = \sum_{Q \in \mathcal{Q}_m} \mu(Q)$.
+        
+        \underline{Step 2.2}: Classification of subcells.
+        
+        For each $Q \in \mathcal{Q}_m$, there are two possibilities:
+        
+        1. $Q \subset A_j$ for some $j$;
+        
+        2. $Q$ intersects at least two distinct sets $A_{j_1}, A_{j_2}$.
+        
+        Let $\mathcal{Q}_m^{(1)} = \{ Q \in \mathcal{Q}_m : \exists j,\; Q \subset A_j \}, \mathcal{Q}_m^{(2)} = \mathcal{Q}_m \setminus \mathcal{Q}_m^{(1)}$.
+        
+        Define $A_m^{(1)} = \bigcup_{Q \in \mathcal{Q}_m^{(1)}} Q, A_m^{(2)} = \bigcup_{Q \in \mathcal{Q}_m^{(2)}} Q$.
+        
+        Then $A = A_m^{(1)} \bigsqcup A_m^{(2)}$, and by finite additivity, $\mu(A) = \mu(A_m^{(1)}) + \mu(A_m^{(2)})$.
+        
+        \underline{Step 2.3}: Estimate of $\mu(A_m^{(1)})$.
+        
+        Since every $Q \in \mathcal{Q}_m^{(1)}$ is contained in some $A_j$, and all $Q$’s are disjoint,
+        $\mu(A_m^{(1)}) = \sum_{Q \in \mathcal{Q}_m^{(1)}} \mu(Q) \le \sum_{j=1}^{\infty} \mu(A_j)$.
+        
+        \underline{Step 2.4}: Estimate of $\mu(A_m^{(2)})$.
+        
+        Each $Q \in \mathcal{Q}_m^{(2)}$ intersects at least two distinct cells $A_{j_1}, A_{j_2}$. Thus, every such $Q$ intersects the boundary of some $A_j$.
+        
+        Denote $\Gamma = \bigcup_{j=1}^{\infty} \partial A_j$. Each $\partial A_j$ is contained in a finite union of $(n-1)$–dimensional hyperrectangles parallel to the coordinate axes; hence $\Gamma$ is a countable union of such hyperrectangles. Therefore, $\mu(\Gamma) = 0$.
+        
+        Let $\delta_m = \max_i \frac{\beta_i-\alpha_i}{m}$ be the mesh size of the partition $\mathcal{Q}_m$. Then $A_m^{(2)}$ is contained in the $\delta_m$–neighborhood of $\Gamma$ inside $A$. Because $\Gamma$ has measure zero, for any $\varepsilon > 0$ there exists $\eta > 0$ such that the $\eta$–neighborhood of $\Gamma$ has $\mu$–measure less than $\varepsilon$. For all sufficiently large $m$ (namely $m > (\max_i (\beta_i-\alpha_i))/\eta$), we have $\delta_m < \eta$ and hence $\mu(A_m^{(2)}) < \varepsilon$. This shows $\lim_{m \to \infty} \mu(A_m^{(2)}) = 0$.
+        
+        Combining above, $\mu(A) = \mu(A_m^{(1)}) + \mu(A_m^{(2)}) le \sum_{j=1}^{\infty} \mu(A_j) + \mu(A_m^{(2)})$, and letting $m \to \infty$ gives $\mu(A) \le \sum_{j=1}^{\infty} \mu(A_j)$. $\checkmark$
+      \end{proof}
+    \item (Finite Additivive BUT NOT $\sigma$-Additive) 
+    
+    Let $\Omega = (0,1) \cap \mathbb{Q}.$
+    Define the collection $\mathcal{R} = \{A \subset \Omega : A \text{ is finite or co-finite in } \Omega\},$ where “co-finite” means that $\Omega \setminus A$ is finite. Then $\mathcal{R}$ is a ring, since the family of all finite or co-finite subsets of any countable set is closed under finite unions and differences.
+    
+    Define $\mu : \mathcal{R} \to [0,\infty)$ by $\mu(A) = 0$, if $A$ is finite; $1$, if $A$ is co-finite in $\Omega$.
+    
+    We verify that $\mu$ is finitely additive.
+    
+    If $A,B\in\mathcal{R}$ are disjoint, then:
+
+	1.	If both $A$ and $B$ are finite, $A\cup B$ is finite, so $\mu(A\cup B)=0=\mu(A)+\mu(B).$
+
+	2.	If one is finite and the other co-finite, their union is co-finite, so $\mu(A\cup B)=1=\mu(A)+\mu(B).$
+
+	3.	It is impossible for two disjoint co-finite subsets to exist in $\Omega$, so no contradiction arises.
+    
+    Hence $\mu$ is finitely additive.
+    
+    Now enumerate $\Omega = \{q_1,q_2,q_3,\dots\}$ and set $A_j = \{q_j\}$.
+    
+    Then each $A_j$ is finite, hence $\mu(A_j)=0$. Also note that $\Omega = \bigsqcup_{j=1}^{\infty} A_j$.
+    
+    If $\mu$ were $\sigma$-additive, we would have $\mu(\Omega) = \sum_{j=1}^{\infty} \mu(A_j) = 0$.
+    But by definition $\mu(\Omega)=1$. Therefore $\mu$ FAILS to be $\sigma$-additive, even though it is finitely additive.
+  \end{enumerate}
+\end{example}
+
+\begin{remark}
+  A measure $\mu$ with $\sigma$-additivity on $S$ could extend to a measure with $\sigma$-additivity on $\mathcal{R}(S)$ by defining $\mu\left( \bigsqcup_{j=1}^m A_j \right) := \Sigma_{j=1}^m \mu(A_j)$, with $A_j \in S$: disjoint.
+
+  While $\sigma$-additivity on $\mathcal{R}(S)$ can be derived from $\sigma$-additivity on $S$, note that we also have a weaker condition satisfied: \textbf{semi-$\sigma$-additivity}, i.e. $\forall A \subset \cup_{j=1}^\infty A_j, A, A_j \in \mathcal{R}(S), \mu(A) \leq \Sigma_{j=1}^\infty \mu(A_j)$.
+\end{remark}
+
+\begin{definition}
+    (outer Lebesgue measure of a set E)
+    
+    Let $\mu$ be a $\sigma$-additive measure on a semi-ring $S$ with unity $\Omega$ (so, $S \subset 2^\Omega$). Let $\mathcal{R}(S) = \mathcal{A}(S)$  --- the minimum algebra containing $S$. For any $E \subset \Omega$, define
+    
+    \[\mu^*(E) := \inf \left\{ \Sigma_{j=1}^\infty \mu(A_j) : A_j \in S, A \subset \cup_{j=1}^\infty A_j \right\}.\]
+    
+    Then, $\mu^*$ is called the \textbf{outer(exterior) Lebesgue measure of a set E} induced by $\mu$ on $\Omega$.
+\end{definition}
+
+\begin{remark}
+  The outer measure $\mu^*$ of a set $E$ always exists (may be infinite), since
+
+  1. $\left\{ \Sigma_{j=1}^\infty \mu(A_j) : A_j \in S, A \subset \cup_{j=1}^\infty A_j \right\}$ at least contains $\Omega$;
+
+  2. Consider the real numbers in $\left\{ \Sigma_{j=1}^\infty \mu(A_j) : A_j \in S, A \subset \cup_{j=1}^\infty A_j \right\}$, they have lower bound $0$. By the completeness of $\R$, the infimum exists.
+
+  \underline{Warning}: 
+  
+  In general, one CANNOT claim that $\mathcal{A}(S) \supset \mathcal{A}(\Omega)$. This is also the key problem of out outer measure being not able to capture all the information in the algebra generated by $\Omega$!
+\end{remark}
+
+\begin{example}
+    (An invisible set under the outer measure)
+    
+    Let $S = \{ [a,b) : a,b \in \mathbb{Q},\, a < b \}$, and define the premeasure $\mu([a,b)) = b - a$. The outer measure $\mu^*$ on $2^{\mathbb{R}}$ is defined by $\mu^*(E) = \inf\{ \sum_{j=1}^{\infty} \mu(A_j) : A_j \in S,\, E \subseteq \bigcup_{j=1}^{\infty} A_j \}$.
+    
+    Consider the set $E = \mathbb{Q} \cap [0,1]$. We will show that $\mu^*(E) = 1$, while $\mu^*(\{q\}) = 0$ for all $q \in E$. Hence, $\mu^*(\bigsqcup_{q\in E}\{q\}) = 1 > 0 = \sum_{q\in E}\mu^*(\{q\})$, which demonstrates that $\mu^*$ is not countably additive, even for disjoint sets.
+\end{example}
+
+\begin{remark}
+This example shows that $\mu^*$ cannot "see" the internal structure of sets outside the algebra $\mathcal{A}(S)$. Although $E$ is a countable, measure-zero set in the intuitive sense, any cover of $E$ by rational half-open intervals must in fact cover the entire interval $[0,1]$. Hence, the outer measure treats $E$ as if it were as large as $[0,1]$.
+\end{remark}
+
+\begin{remark}
+    (The philosophy behind outer measure)
+    
+    Why do we call it an "outer measure"? 
+    
+    The name comes from its construction principle: we measure a set \emph{from the outside}. Given a subset $E \subseteq \Omega$, we generally cannot measure $E$ directly, because $E$ may be too irregular or may not belong to the algebra $\mathcal{A}(S)$ where the original measure $\mu$ is defined. Instead, we approximate $E$ by sets $A_j \in S$ that cover $E$ from the outside and take the smallest possible total measure among all such coverings. 
+    
+    Formally, $\mu^*(E) = \inf\{\sum_j \mu(A_j) : E \subseteq \bigcup_j A_j,\, A_j \in S\}$, which expresses the idea of an \emph{outer approximation}. The measure does not come from the intrinsic structure of $E$, but from the minimal "outer shell" built using measurable sets in $S$. 
+    
+    Philosophically, $\mu^*$ represents the best information we can obtain about the size of $E$ given our limited "vocabulary" $S$. It is an act of estimation under partial visibility: we look at $E$ through a coarse geometric lens and ask, "How small can the total measure of the covering be if I only use shapes I can measure?"
+    
+    Thus, it is called an \emph{outer measure} because it always measures from the \emph{outside}, enclosing $E$ within measurable sets rather than dissecting it from the inside.
+\end{remark}
+
+\begin{proposition}
+  \begin{enumerate}
+    \item $\mu^*$ always $\exists$, and $\mu^*(A) \geq 0, \forall A \subset \Omega$.
+    \item We can equivalently say in the definition of $\mu^*$ that $A_j$ are disjoint.
+    \item $\forall A \in \mathcal{A}(S)$, $\mu(A) = \mu^*(A)$
+      \begin{proof}
+        On one hand, by the semi-$\sigma$-additivity, $\mu(A) \leq \Sigma_{j=1}^{\infty} \mu(A_j)$ if $\cup_{j=1}^{\infty} A_j \supset A$.
+
+        $\Rightarrow$ Take $inf$: $\mu(A) \leq \mu^*(A)$;
+
+        On the other hand, take the trivial covering: $A_1 = A$,
+        
+        $\mu(A) = \mu(A_1) = \mu(A_1 \bigsqcup_{j=1}^{\infty}\emptyset) \geq \mu^*(A)$,
+
+        $\Rightarrow \mu(A) = \mu^*(A)$.
+      \end{proof}
+    \item If $E_1 \subset E_2 \subset \Omega$, then $\mu^*(E_1) \leq \mu^*(E_2)$ (since any covering of $E_2$ is also a covering of $E_1$).
+    \item (\emph{Semi-$\sigma$-additivity of $\mu^*$}) 
+    
+    If $E \subset \cup_{j=1}^\infty E_j$, $E,E_j \subset \Omega$, then $\mu^*(E) \leq \Sigma_{j=1}^\infty \mu^*(E_j)$. (this CANNOT be improved even if $E = \sqcup_{j=1}^{\infty} E_j$ --- check our warning above!)
+      \begin{proof}
+        $\forall \eps > 0$, 
+        
+        $\forall j$, choose $\{A_{j,k}\}_{k=1}^{\infty} \subset S$ such that $E_j \subset \cup_{k=1}^{\infty} A_{j,k}$ and
+
+        \(\Sigma_{k=1}^{\infty} \mu(A_{j,k}) \leq \mu^*(E_j) + \frac{\eps}{2^j}\) (thanks to the infimum property).
+
+        Thus, \(E \subset \cup_{j=1}^{\infty} E_j \subset \cup_{j=1}^{\infty} \cup_{k=1}^{\infty} A_{j,k}.\)
+
+        Thus, by the definition of $\mu^*$ and semi-$\sigma$-additivity of $\mu$,
+
+        \(\mu^*(E) \leq \Sigma_{j=1}^{\infty} \Sigma_{k=1}^{\infty} \mu(A_{j,k}) \leq \Sigma_{j=1}^{\infty} \left( \mu^*(E_j) + \frac{\eps}{2^j} \right) = \Sigma_{j=1}^{\infty} \mu^*(E_j) + \eps.\)
+
+        Let $\eps \rightarrow 0^+$, we get the desired result.
+      \end{proof}
+  \end{enumerate}
+\end{proposition}
+
+\begin{example}
+  Let's fix a bounded cell $\Omega$ in $\R^d$. Let $S = \{$all cells $C \subset \Omega\}$.
+
+  Define $\mu(\{p\}) = 0$ for all $p \in \Omega$. Consider $E = \Omega \cap \Q^n, E = \{q_1, q_2, \ldots\}$
+
+  $\Rightarrow \mu^*(E) \leq \Sigma_{j=1}^{\infty} \mu^*(\{q_j\}) = \Sigma_{j=1}^{\infty} \mu(\{q_j\}) = 0 \Rightarrow \mu^*(E) = 0$.
+
+  $\mu^*(\Omega \setminus E) \leq \mu^*(\Omega) = \mu(\Omega)$
+
+  But by semi-$\sigma$-additivity,
+  \(\mu(\Omega) = \mu^*(\Omega) \leq \mu^*(E) + \mu^*(\Omega \setminus E) = \mu^*(\Omega \setminus E).\)
+
+  $\Rightarrow \mu^*(\Omega \setminus E) = \mu(\Omega)$, which means that the outer measure CANNOT distinguish the counterble but sparce set $\Q^n$.
+\end{example}
+
+\begin{definition}
+  Let $S$ be a semi-ring with unity $\Omega$, and $\mu$ be a $\sigma$-additive measure on $S$. $R(S) = \mathcal{A}(S)$ --- the minimum algebra containing $S$, $\mathcal{A}(S) \subset 2^\Omega$. A set $E \subset \Omega$ is called \textbf{(Lebesgue) measurable} if $\forall \eps > 0$, $\exists B_{\eps} \in \mathcal{A}(S)$ such that $\mu^*(E \triangle B_{\eps}) < \eps.$
+\end{definition}
+
+\begin{example}
+  In this setting, let $\mu^*(E) = 0$, then $E$ is measurable: Choose $B_{\eps} = \emptyset$, then \(\mu^*(E \triangle B_{\eps}) = \mu^*(E) < \eps\).
+\end{example}
+
+\begin{remark}
+    The definition of a (Lebesgue) measurable set captures the idea of \emph{approximability by “nice” sets}. A set $E \subset \Omega$ is called measurable if it can be arbitrarily well approximated by sets $B_\varepsilon$ from the algebra $\mathcal{A}(S)$, in the sense that the “disagreement region” between $E$ and $B_\varepsilon$, namely the symmetric difference $E \triangle B_\varepsilon$, has arbitrarily small outer measure: $\mu^*(E \triangle B_\varepsilon) < \varepsilon$ for all $\varepsilon > 0$.
+    
+    Intuitively, this means that even if $E$ itself may be irregular or complicated, we can always find a clean, measurable set $B_\varepsilon$ that almost coincides with $E$ up to an arbitrarily small “error area.” Measurable sets are precisely those whose geometry can be faithfully captured through such approximations.
+    
+    In the above example, if $\mu^*(E)=0$, then $E$ is trivially measurable. Indeed, we can take $B_\varepsilon = \emptyset$, so that $\mu^*(E \triangle B_\varepsilon) = \mu^*(E) = 0 < \varepsilon$. This illustrates that every \emph{measure-zero set} is measurable: such sets are geometrically “invisible” to the outer measure, since they can be ignored without affecting any measured quantity.
+\end{remark}
+
+\underline{Setting}: 
+
+$(\Omega, S, \mu)$ --- $\Omega$ - set, $S$ - semi-ring with unity $\Omega$, $\mu$ - $\sigma$-additive measure on $S$
+
+$\rightarrow$ directly extend to $(\Omega, \mathcal{A}(S), \mu)$
+
+$\rightarrow$ introduce $\mu^*$ on the whole $2^\Omega$
+
+$\rightarrow$ $(\Omega, \mathcal{M}(\Omega), \mu)$, with $\mathcal{M}(\Omega)$: collection of all measurable sets in $\Omega$.
+
+$A \in \mathcal{M}(\Omega)$ if $\forall \eps > 0$, $\exists B_{\eps} \in \mathcal{A}(S)$ such that $\mu^*(A \triangle B_{\eps}) < \eps.$
+
+\begin{theorem}
+  In the above setting, let $\mathcal{M}(S)$ be the collection of all measurable sets and we set $\mu(A) := \mu^*(A), \forall A \in M(S)$. Then,
+  \begin{enumerate}
+    \item $\mathcal{M}(S)$ is a $\sigma$-algebra.
+
+      ($M(S)$ extends the original algebra $\mathcal{A}(S)$.)
+    \item $\mu^*$ is $\sigma$-additive on $\mathcal{M}(S)$.
+
+      ($M$ extends the original measure $\mu$ on $\mathcal{A}(S)$.)
+  \end{enumerate}
+  \begin{proof}
+
+    First of all, we know that $\Omega \in \mathcal{M}(\Omega)$.
+
+
+    \underline{Step I}: prove if $A \in \mathcal{M}(\Omega)$, then $\Omega \setminus A \in \mathcal{M}(\Omega)$.
+
+    Fix $\eps > 0$, $\exists B_{\eps} \in \mathcal{A}(S)$ such that $\mu^*(A \triangle B_{\eps}) < \eps.$ 
+    
+    Consider $\Omega \setminus B_{\eps} \in \mathcal{A}$. Then, note $(\Omega \setminus A) \triangle (\Omega \setminus B_{\eps}) = A \triangle B_{\eps}$.
+
+    Thus, $\mu^*((\Omega \setminus A) \triangle (\Omega \setminus B_{\eps})) < \eps$ $\Rightarrow \Omega \setminus A \in \mathcal{M}(\Omega)$.
+
+    \underline{Step II}: prove $\forall A_1, A_2, \ldots, A_n \in \mathcal{M}(\Omega)$, we have $\bigcup_{i=1}^n A_i \in \mathcal{M}(\Omega)$.
+
+    Only need to prove for $n=2$ (others by induction).
+
+    $A_1, A_2 \in \mathcal{M}(\Omega)$, $\forall \eps > 0. \exists B_1, B_2 \in \mathcal{A}: \mu^*(A_1 \triangle B_1) < \eps, \mu^*(A_2 \triangle B_2) < \eps$.
+
+    $A = A_1 \bigcup A_2$, we will approxmate by $B = B_1 \bigcup B_2$.
+    
+    Since $(A_1 \bigcup A_2) \triangle (B_1 \bigcup B_2) \subset (A_1 \bigcup B_1) \triangle (A_2 \bigcup B_2)$,
+
+    $\mu^*(A \triangle B) < \mu^*(A_1 \triangle B_1) + \mu^*(A_2 \triangle B_2) < 2\eps$
+
+    $\Rightarrow A_1 \bigcup A_2 \in \mathcal{M}(\Omega)$.
+
+    Thus, the first statement is proved.
+
+    \begin{corollary}
+    $\mathcal{M}(\Omega)$ is an algebra.
+        
+        \begin{proof}
+            \begin{itemize}
+                \item contains $\Omega$.
+                \item closed under taking union: proved above.
+                \item closed under intersection:
+                \item closed under symmetric difference: $A \triangle B = $
+            \end{itemize}
+        \end{proof}
+    \end{corollary}
+
+    \underline{Step III}: prove $\mu^*$ is finitely additive on $\mathcal{M}(\Omega)$.
+
+    So, $\forall A_1, A_2, \ldots, A_n \in \mathcal{M}(\Omega)$, we need to show $\mu(A_1 \cup A_2 \cup \cdots \cup A_n) = \mu(A_1) + \mu(A_2) + \cdots + \mu(A_n)$.
+
+    Similarly, only need to show for $n=2$.
+
+    Take $A_1, A_2 \in \mathcal{M}(\Omega), A_1 \cap A_2 = \emptyset$.
+
+    $\forall \eps > 0, \exists B_1, B_2 \in \mathcal{A}(S): \mu^*(A_1 \triangle B_1) < \eps, \mu^*(A_2 \triangle B_2) < \eps$.
+
+    Since $B_1 \bigcap B_2 \subset (A_1 \triangle B_1) \bigcup (A_2 \triangle B_2)$, we have $\mu^*$
+
+\clearpage
+
+    \underline{Step IV}: prove $\mu^*$ is a $\sigma$-algebra on $\mathcal{M}(\Omega)$.
+
+
+
+    \dots
+
+    \dots
+
+
+    
+
+    Replace by disjoint union: let $A_1^{\prime} = A_1, A_2^{\prime} = A_2 \setminus A_1, A_3^{\prime} = A_3 \setminus (A_1 \bigcup A_2), \ldots$.
+
+    Then, we have $A = \bigsqcup_{i=1}^{\infty}A_i^{\prime}$.
+
+    We have 
+
+
+
+
+\clearpage
+
+
+    \underline{Step V}: prove $\mu^*$ is $\sigma$-additive on $\mathcal{M}(\Omega)$.
+
+    WTS: $\forall A_1, A_2, \ldots, A_n \in \mathcal{M}(\Omega)$, we have $\mu^*(A_1 \cup A_2 \cup \cdots \cup A_n) = \mu^*(A_1) + \mu^*(A_2) + \cdots + \mu^*(A_n)$.
+    
+    
+
+
+  \end{proof}
+\end{theorem}
+
+
+\clearpage
+
+So, we end up with a triple: ($\Omega, \mathcal{M}(\Omega), \mu$) --- (set $\Omega$, $\sigma$-algebra, $\sigma$-additive measure on $\mathcal{M}(\Omega)$).
+
+\begin{definition}
+    (Space with Measure)
+
+    Such a triple ($\Omega, \mathcal{A}, \mu$) ($\mathcal{A}$ is some $\sigma$-algebra) is called a \textbf{spcae with measure}.
+\end{definition}
+
+
+
+\clearpage
+
+
+\subsection{}
+
+\begin{definition}
+    (Completeness)
+
+    If ($\Omega, \mathcal{A}, \mu$) is a space with measure, then it's called \textbf{complete} if $
+    \forall A \in \mathcal{A}$ with $\mu(A)=0$, it holds $\forall E \subset A, E \in \mathcal{A}$ (and hence $\mu(E)=0$).
+\end{definition}
+
+\begin{example}
+    For ($\Omega, \mathcal{M}(\Omega), \mu$), we always have completeness:
+
+    $\mu(A) = 0, E \subset A \Rightarrow 0 \leq \mu^*(E) \leq \mu^*(A) = 0 \Rightarrow E \subset \mathcal{M}(\Omega)$.
+
+    BUT this FAILS in general. For example, $\exists$ measure 0 non-Borel sets, which is contained in some measure 0 Borel sets, so Lebesgure measure $\mu$ on $\R^n$, restricted to Borel $\sigma$-algebra is incomplete.
+\end{example}
+
+However, 
+
+
+\begin{theorem}
+    For any space with measure ($\Omega, \mathcal{A}, \mu$), the following holds:
+    \begin{enumerate}
+        \item $\forall A_1 \subset A_2 \subset A_3 \subset \ldots$ with $A_i \in \mathcal{A}$, it holds $\mu(\bigcup_{i=1}^{\infty} A_i) = limit i \rightarrow \infty \mu(A_i)$.
+        \item 
+    \end{enumerate}
+
+\end{theorem}
+
+Question: What about $\infty$-valued measures?
+
+Consider a space with measure ($\Omega, \mathcal{A}, \mu$), where $\mu$ is a $\bar{\R}$-valued measure. The definition of $\sigma$-additivity is repeated word-by-word.
+
+Then we easily deduce several similar properties.
+
+\begin{proposition}
+    \begin{enumerate}
+        \item $\mu(\emptyset) = 0$.
+        \item If $A \subset B,$ then $\mu(A) \leq \mu(B)$.
+        \item If $A \subset \bigcup_{j=1}^{\infty} A_j,$ then $\mu(\bigcup_{j=1}^n A_j) = \Sigma_{j=1}^{\infty} \mu(A_j)$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{definition}
+    A space with $\infty$-valued measure is called \textbf{$\sigma$-finite} if $\Omega = \bigsqcup_{k=1}^{\infty} \Omega_k, \Omega_k \in \mathcal{A}, \mu(\Omega_k) < \infty$, then $\forall A \subset \mathcal{A}, \mu(A) = \Sigma_{k=1}^{\infty} \mu(A \bigcap \Omega_k) =: \Sigma_{k=1}^{\infty} \mu_k(A)$.
+\end{definition}
+
+So, essentially, $\mu$ is obtained from ${\mu_k}_{k=1}^{\infty}$, with each $\mu_k$ defined on $\mathcal{A}\cap 2^{\Omega_k}$.
+
+
+
+
+
+
+
+
+\begin{example}
+    $\R^n = \bigsqcup_{i_1, i_2, \ldots, i_n}[i_1, i_1+1) \times [i_2, i_2+1) \times \ldots \times [i_n, i_n+1), i_1, \ldots, i_n \in \Z$.
+
+\end{example}
+
+
+
+
+
+
+\end{document}
