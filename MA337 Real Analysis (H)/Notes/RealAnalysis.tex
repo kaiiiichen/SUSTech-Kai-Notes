@@ -5,6 +5,8 @@
 \usepackage{esint}
 \usepackage{geometry}
 \geometry{a4paper, margin=1in}
+\usepackage{setspace}
+\onehalfspacing % 设置为1.5倍行距
 \usepackage{hyperref}
 \hypersetup{colorlinks=true, linkcolor=blue, citecolor=magenta, urlcolor=cyan}
 \usepackage{titlesec}
@@ -75,7 +77,7 @@
 \clearpage
 \pagenumbering{arabic}
 
-\section{Crash Course on Set Theory}
+\section{Set Theory}
 
 \clearpage
 
@@ -92,6 +94,11 @@
 \clearpage
 
 \section{Lebesgue Measure and Integration}
+We now enter the chaper of Lebesgue measure and integration.
+
+In this chapter, we embark on a journey into the fundamental concepts of Lebesgue measure and integration. This theory, developed by Henri Lebesgue at the beginning of the 20th century, provides a more robust and general framework for integration than the Riemann integral, allowing us to integrate a wider class of functions and providing powerful convergence theorems essential for modern analysis and probability theory. We will begin by establishing the foundational building blocks: systems of sets, such as semi-rings, rings, algebras, and $\sigma$-algebras, which provide the structure upon which measures are defined.
+
+We will then introduce the concept of a measure, focusing on $\sigma$-additivity, a crucial property that allows for the consistent measurement of infinite unions of disjoint sets. A significant part of this chapter will be dedicated to the construction of the Lebesgue measure on Euclidean spaces, starting from elementary "volumes" of semi-open cells and extending it to a much broader collection of sets through the process of outer measure and Carathéodory's extension theorem. This rigorous construction will lead us to the definition of measurable sets and measurable functions, paving the way for the development of the Lebesgue integral in subsequent chapters.
 
 \clearpage
 
@@ -272,6 +279,8 @@
 \end{proposition}
 
 \begin{definition}
+  ($\sigma$-algebra)
+
   A system of sets $\mathcal{A}$ is called a \textbf{$\sigma$-algebra} if $\mathcal{A} \subset 2^{\Omega}, \Omega \in \mathcal{A}, \mathcal{A}$ is an algebra with unity $\Omega$, and $\forall A_1, A_2, \ldots$ (finite or infinite family of sets!) with $\forall j: A_j \in \mathcal{A}$ it holds $\cup_{j=1}^{\infty} A_j \in \mathcal{A}$.
 \end{definition}
 
@@ -685,7 +694,11 @@ $\rightarrow$ introduce $\mu^*$ on the whole $2^\Omega$
 
 $\rightarrow$ $(\Omega, \mathcal{M}(\Omega), \mu)$, with $\mathcal{M}(\Omega)$: collection of all measurable sets in $\Omega$.
 
-$A \in \mathcal{M}(\Omega)$ if $\forall \eps > 0$, $\exists B_{\eps} \in \mathcal{A}(S)$ such that $\mu^*(A \triangle B_{\eps}) < \eps.$
+'measurable': $\forall A \in \mathcal{M}(\Omega)$, $\forall \eps > 0$, $\exists B_{\eps} \in \mathcal{A}(S)$ such that $\mu^*(A \triangle B_{\eps}) < \eps.$
+
+\begin{remark}
+  To better distinguish $\mu$ and $\mu^*$, for those in the original $\mathcal{A}(S)$, we use $\mu$. Otherwise, we use the notation $\mu^*$. Thus, $*$ emphases that the measure on the set is defined by extanding $\mu$.
+\end{remark}
 
 \begin{theorem}
   In the above setting, let $\mathcal{M}(S)$ be the collection of all measurable sets and we set $\mu(A) := \mu^*(A), \forall A \in M(S)$. Then,
@@ -751,7 +764,8 @@ $A \in \mathcal{M}(\Omega)$ if $\forall \eps > 0$, $\exists B_{\eps} \in \mathca
 
     Since $B_1 \bigcap B_2 \subset (A_1 \triangle B_1) \bigcup (A_2 \triangle B_2)$, we have $\mu^*$
 
-\clearpage
+
+
 
     \underline{Step IV}: prove $\mu^*$ is a $\sigma$-algebra on $\mathcal{M}(\Omega)$.
 
@@ -773,7 +787,7 @@ $A \in \mathcal{M}(\Omega)$ if $\forall \eps > 0$, $\exists B_{\eps} \in \mathca
 
 
 
-\clearpage
+
 
 
     \underline{Step V}: prove $\mu^*$ is $\sigma$-additive on $\mathcal{M}(\Omega)$.
@@ -787,14 +801,14 @@ $A \in \mathcal{M}(\Omega)$ if $\forall \eps > 0$, $\exists B_{\eps} \in \mathca
 \end{theorem}
 
 
-\clearpage
 
-So, we end up with a triple: ($\Omega, \mathcal{M}(\Omega), \mu$) --- (set $\Omega$, $\sigma$-algebra, $\sigma$-additive measure on $\mathcal{M}(\Omega)$).
+
+Conclusion: We end up with a triple ($\Omega, \mathcal{M}(\Omega), \mu$) --- (set: $\Omega$, $\sigma$-algebra: $\mathcal{M}(\Omega)$, $\sigma$-additive measure on $\mathcal{M}(\Omega)$: $\mu$).
 
 \begin{definition}
-    (Space with Measure)
+    (Measure Space)
 
-    Such a triple ($\Omega, \mathcal{A}, \mu$) ($\mathcal{A}$ is some $\sigma$-algebra) is called a \textbf{spcae with measure}.
+    Such a triple ($\Omega, \mathcal{A}, \mu$) ($\mathcal{A}$ is some $\sigma$-algebra on the set $\Omega$) is called a \textbf{measure space (spcae with measure)}.
 \end{definition}
 
 
@@ -802,38 +816,57 @@ So, we end up with a triple: ($\Omega, \mathcal{M}(\Omega), \mu$) --- (set $\Ome
 \clearpage
 
 
-\subsection{}
+\subsection{Measure Space}
+Recall: A triple ($\Omega, \mathcal{A}, \mu$) ($\mathcal{A}$ is some $\sigma$-algebra on the set $\Omega$) is called a \textbf{measure space (spcae with measure)}.
 
 \begin{definition}
-    (Completeness)
+    (Completeness of a Measure Space)
 
-    If ($\Omega, \mathcal{A}, \mu$) is a space with measure, then it's called \textbf{complete} if $
-    \forall A \in \mathcal{A}$ with $\mu(A)=0$, it holds $\forall E \subset A, E \in \mathcal{A}$ (and hence $\mu(E)=0$).
+
+    A \textbf{complete} measure (or, more precisely, a complete measure space) is a measure space in which every subset of every null set is measurable (having measure zero).
+
+    More formally, if ($\Omega, \mathcal{A}, \mu$) is a measure space, then it's called \textbf{complete} if and only if $A \subset E \in \mathcal{A}$, $\mu(E) = 0$, $\Rightarrow A \in \mathcal{A}$ (and hence $\mu(A)=0$).
 \end{definition}
 
 \begin{example}
     For ($\Omega, \mathcal{M}(\Omega), \mu$), we always have completeness:
 
-    $\mu(A) = 0, E \subset A \Rightarrow 0 \leq \mu^*(E) \leq \mu^*(A) = 0 \Rightarrow E \subset \mathcal{M}(\Omega)$.
+    $\mu(A) = 0, E \subset A \Rightarrow 0 \leq \mu^*(E) \leq \mu^*(A) = 0 \Rightarrow E \in \mathcal{M}(\Omega)$.
 
-    BUT this FAILS in general. For example, $\exists$ measure 0 non-Borel sets, which is contained in some measure 0 Borel sets, so Lebesgure measure $\mu$ on $\R^n$, restricted to Borel $\sigma$-algebra is incomplete.
+    But this FAILS in general. For example, $\exists$ measure 0 non-Borel sets, which is contained in some measure 0 Borel sets, so Lebesgure measure $\mu$ on $\R^n$, restricted to Borel $\sigma$-algebra is incomplete.
+
+    However, any incomplete measure space can extend its measure to attain a complete measure space. One just need to follow the Lebesgue extension of a general measure space ($\Omega, \mathcal{A}, \mu$).
 \end{example}
 
-However, 
-
-
 \begin{theorem}
-    For any space with measure ($\Omega, \mathcal{A}, \mu$), the following holds:
+    For any measure space ($\Omega, \mathcal{A}, \mu$), the following holds:
     \begin{enumerate}
-        \item $\forall A_1 \subset A_2 \subset A_3 \subset \ldots$ with $A_i \in \mathcal{A}$, it holds $\mu(\bigcup_{i=1}^{\infty} A_i) = limit i \rightarrow \infty \mu(A_i)$.
-        \item 
+        \item $\forall A_1 \subset A_2 \subset A_3 \subset \ldots$ with $A_i \in \mathcal{A}$, $\mu(\bigcup_{i=1}^{\infty} A_i) = \lim\limits_{i \to \infty} \mu(A_i)$.
+        \item If $A_1 \supset A_2 \supset A_3 \supset \ldots$, $A_i \in \mathcal{A}$, then $\lim\limits_{i \to \infty} \mu(A_i) = \mu(\bigcap_{i=1}^{\infty} A_i)$.
     \end{enumerate}
 
+    Both $1$ and $2$ are called the \textbf{continuity} of the measure.
+
+    \begin{proof}
+    
+    \end{proof}
 \end{theorem}
 
-Question: What about $\infty$-valued measures?
+\underline{Question}: What about $\infty$-valued measures?
 
-Consider a space with measure ($\Omega, \mathcal{A}, \mu$), where $\mu$ is a $\bar{\R}$-valued measure. The definition of $\sigma$-additivity is repeated word-by-word.
+Consider a space with measure ($\Omega, \mathcal{A}, \mu$), where $\mu$ is a $\bar{\R}$-valued measure. The definition of finite additivity and $\sigma$-additivity is repeated word-by-word:
+
+\textbf{Finite additivity}:
+\begin{enumerate}
+  \item $\mu(A) \geq 0$;
+  \item $\mu(\bigcup_{j=1}^{n} A_j) = \Sigma_{j=1}^{n} \mu(A_j)$;
+\end{enumerate}
+
+\textbf{$\sigma$-additivity}:
+\begin{enumerate}
+  \item $\mu(A) \geq 0$;
+  \item $\mu(\bigcup_{j=1}^{\infty} A_j) = \Sigma_{j=1}^{\infty} \mu(A_j)$;
+\end{enumerate}
 
 Then we easily deduce several similar properties.
 
@@ -841,15 +874,20 @@ Then we easily deduce several similar properties.
     \begin{enumerate}
         \item $\mu(\emptyset) = 0$.
         \item If $A \subset B,$ then $\mu(A) \leq \mu(B)$.
-        \item If $A \subset \bigcup_{j=1}^{\infty} A_j,$ then $\mu(\bigcup_{j=1}^n A_j) = \Sigma_{j=1}^{\infty} \mu(A_j)$.
+        \item If $A \subset \bigcup_{j=1}^{\infty} A_j,$ then $\mu(\bigcup_{j=1}^n A_j) \leq \Sigma_{j=1}^{\infty} \mu(A_j)$.
     \end{enumerate}
 \end{proposition}
 
 \begin{definition}
-    A space with $\infty$-valued measure is called \textbf{$\sigma$-finite} if $\Omega = \bigsqcup_{k=1}^{\infty} \Omega_k, \Omega_k \in \mathcal{A}, \mu(\Omega_k) < \infty$, then $\forall A \subset \mathcal{A}, \mu(A) = \Sigma_{k=1}^{\infty} \mu(A \bigcap \Omega_k) =: \Sigma_{k=1}^{\infty} \mu_k(A)$.
+    A measure space with $\infty$-valued measure is called \textbf{$\sigma$-finite} if 
+    
+    $\Omega = \bigsqcup_{k=1}^{\infty} \Omega_k, \Omega_k \in \mathcal{A}$, $\mu(\Omega_k) < \infty$. 
+    
+    Then $\forall A \subset \mathcal{A}$, $\mu(A) = \Sigma_{k=1}^{\infty} \mu(A \bigcap \Omega_k) =: \Sigma_{k=1}^{\infty} \mu_k(A)$.
 \end{definition}
 
-So, essentially, $\mu$ is obtained from ${\mu_k}_{k=1}^{\infty}$, with each $\mu_k$ defined on $\mathcal{A}\cap 2^{\Omega_k}$.
+So, essentially, $\mu$ is obtained from $\{\mu_k\}_{k=1}^{\infty}$, with each $\mu_k$ defined on $\mathcal{A}\cap 2^{\Omega_k}$.
+
 
 
 
@@ -866,6 +904,166 @@ So, essentially, $\mu$ is obtained from ${\mu_k}_{k=1}^{\infty}$, with each $\mu
 
 
 
+
+
+
+
+
+
+\begin{remark}
+  For $\Omega = \bigsqcup_{k=1}^{\infty} \Omega_k = \bigsqcup_{j=1}^{\infty} \Omega_j^{\prime}$
+
+  Mesures agree:
+
+
+
+
+
+\end{remark}
+
+
+
+
+
+
+
+
+
+
+\clearpage
+
+
+
+
+
+
+\subsection{Lebesgue Measure in $\R^n$}
+
+\underline{Goal}: Understand $\mathcal{M}(\R^n)$.
+
+\underline{Main fact}: $\mathcal{B}(\R^n) \subsetneq \mathcal{M}(\R^n) \subsetneq 2^{\R^n}$.
+
+
+
+
+
+
+
+\begin{proposition}
+  \begin{enumerate}
+    \item (Shift-invariance) If $E_{\alpha} := \{x+\alpha, x\in E, \alpha \in \R^n$: fixed$\}$, then 
+    
+    $E_{\alpha} \in \R^n \Leftrightarrow E \subset \mathcal{M}(R)$; and we also have $\mu(E_{\alpha} = \mu(E))$.
+
+    It holds since it holds for cells.
+
+    \item $\mathcal{B}(\R^n) \subset \mathcal{M}(\R^n)$
+  \end{enumerate}
+
+\end{proposition}
+
+\begin{proposition}
+  $\exists$ a non-measurable subset $A \subset [0,1)$.
+  \begin{proof}
+    On $[0,1)$, consider the following equivalent relation:
+
+
+  \end{proof}
+\end{proposition}
+
+
+
+
+
+\begin{proposition}
+  $\forall A \subset \R$ with $\mu(A)>0$, $A$ contains some $B \subset A$ s.t. $B \notin \mathcal{M}(\R)$.
+  \begin{proof}
+  
+  \end{proof}
+
+\end{proposition}
+
+\begin{remark}
+  The same holds in $\R^n$: $\forall A \subset \R^n$ with $\mu(A)>0$, $A$ contains some $B \subset A$ s.t. $B \notin \mathcal{M}(\R^n)$.
+\end{remark}
+
+
+
+
+
+
+\clearpage
+
+
+
+\subsection{Cantor Set}
+
+We build a sequence of sets:
+
+$E_0 = [0,1]$
+
+$E_1 = E_0 \setminus I_1$, $I_1 = (\frac{1}{3}, \frac{2}{3})$.
+
+$E_2 = E_1 \setminus I_2$, $I_2 = I_{1,1} \bigcup I_{1,2}$, $I_{1,1} = (\frac{1}{9}, \frac{2}{9})$, $I_{1,2} = (\frac{7}{9}, \frac{8}{9})$.
+
+$E_3 = E_2 \setminus I_3$, $I_3 = I_{2,1} \bigcup I_{2,2} \bigcup I_{2,3} \bigcup I_{2,4}$, $I_{2,1} = (\frac{1}{27}, \frac{2}{27})$, $I_{2,2} = (\frac{4}{27}, \frac{5}{27})$, $I_{2,3} = (\frac{19}{27}, \frac{20}{27})$, $I_{2,4} = (\frac{25}{27}, \frac{26}{27})$.
+
+
+$\ldots$
+
+We get a sequence of sets $\{E_k\}$, $\forall E_k$ is closed. $\Rightarrow C_0 := \bigcap_{k=1}^{\infty}E_k$, $C_0$ is closed and bounded $\Rightarrow$ $C_0$ is compact.
+
+\begin{definition}
+  (Cantor Set)
+
+  Such $C_0$ is called a \textbf{(standard) Cantor set}.
+\end{definition}
+
+\begin{proposition}
+  \begin{enumerate}
+    \item $C_0$ is compact and $C_0 \subset [0,1]$;
+    \item $C_0$ is nowhere dense;
+    \item $\mu(C_0) = 0$
+    \begin{proof}
+    
+    \end{proof}
+    \item $C_0$ is continual.
+    \begin{proof}
+    
+    \end{proof}
+  \end{enumerate}
+\end{proposition}
+
+
+
+\clearpage
+
+
+\subsection{Cantor Staircase Function}
+
+\begin{definition}
+  
+\end{definition}
+
+
+\begin{lemma}
+  Let $f: \Omega \rightarrow \Omega^{\prime}, S^{\prime} \subset 2^{\Omega^{\prime}}$, then $\mathcal{A}(f^{-1}*(S^{\prime})) = f^{-1}(\mathcal{A}(S^{\prime}))$.
+  \begin{proof}
+  
+  \end{proof}
+\end{lemma}
+
+\begin{corollary}
+  (Preimage of Borel set is Borel.)
+
+  If $f: [a,b] \rightarrow [c,d]$ is continuous, then $f^{-1}(E^{\prime})$ is Borel, provided $E^{\prime} \subset [c,d]$ is Borel.
+  \begin{proof}
+    Follows from $f^{-1}(G)$ is open if $G$ is open.
+  \end{proof}
+\end{corollary}
+
+
+Now, consider $\phi (x) := x + K(x)$, $\phi : [0,1] \rightarrow [0,2]$, $\phi$ is strictly increasing.
 
 
 \end{document}

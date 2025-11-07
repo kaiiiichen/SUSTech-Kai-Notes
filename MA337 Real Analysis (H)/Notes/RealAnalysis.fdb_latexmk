@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1761929207.25738 "/Users/kaichen/Desktop/MA337 Real Analysis (H)/Notes/RealAnalysis.tex" "RealAnalysis.pdf" "RealAnalysis" 1761929207.76218 0
-  "/Users/kaichen/Desktop/MA337 Real Analysis (H)/Notes/RealAnalysis.tex" 1761929207.17342 39542 bdf05a0c61234a7463f67349f3aeeb01 ""
+["pdflatex"] 1762496629.28986 "/Users/kaichen/Desktop/MA337 Real Analysis (H)/Notes/RealAnalysis.tex" "RealAnalysis.pdf" "RealAnalysis" 1762496629.7387 0
+  "/Users/kaichen/Desktop/MA337 Real Analysis (H)/Notes/RealAnalysis.tex" 1762496628.65325 45636 cbb0f936f4e66af2c1db395201d7cdb1 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -42,6 +42,7 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1248133631 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1248133631 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1248133631 36118 fad905eba93cff5bce1e185fe980a177 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
@@ -107,6 +108,7 @@
   "/usr/local/texlive/2025/texmf-dist/tex/latex/refcount/refcount.sty" 1576624809 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657483315 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/scalerel/scalerel.sty" 1483104048 7825 43f8c26a0a3916d218f4f48c29aa92e4 ""
+  "/usr/local/texlive/2025/texmf-dist/tex/latex/setspace/setspace.sty" 1670275497 22490 8cac309b79a4c53a4ffce4b1b07aead0 ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/stackengine/stackengine.sty" 1626986448 16455 7159cc65692c01a770db5ae586ea9570 ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/titlesec/titlesec.sty" 1736023606 48766 87a17a4ef312a39cd43896e34a679a56 ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/tools/calc.sty" 1717359999 10214 61188260d324e94bc2f66825d7d3fdf4 ""
@@ -115,10 +117,10 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1761246260 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1761246228 3345744 29ad53b185ca22f4cf154dc2aa0d2a3d ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "RealAnalysis.aux" 1761929207.69256 1217 0358dddbdb19c82d332af3355833704b "pdflatex"
-  "RealAnalysis.out" 1761929207.69352 1542 72f444621a12a2892eff0445faef5a1c "pdflatex"
-  "RealAnalysis.tex" 1761929207.17342 39542 bdf05a0c61234a7463f67349f3aeeb01 ""
-  "RealAnalysis.toc" 1761929207.69375 726 03bd51d6ce3990f62e5838d658251f4d "pdflatex"
+  "RealAnalysis.aux" 1762496629.68749 1609 40b4c7b19d49249e96796480bb7d7ddd "pdflatex"
+  "RealAnalysis.out" 1762496629.68791 2005 356334e2fd96aebb71b09cde059c0e21 "pdflatex"
+  "RealAnalysis.tex" 1762496628.65325 45636 cbb0f936f4e66af2c1db395201d7cdb1 ""
+  "RealAnalysis.toc" 1762496629.68805 994 30abd7e2de343cedeee5c697eac8142a "pdflatex"
   (generated)
   "RealAnalysis.aux"
   "RealAnalysis.log"
