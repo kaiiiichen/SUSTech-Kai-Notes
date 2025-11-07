@@ -6,19 +6,20 @@
 \usepackage{geometry}
 \geometry{a4paper, margin=1in}
 \usepackage{setspace}
-\onehalfspacing % 设置为1.5倍行距
+\onehalfspacing
 \usepackage{hyperref}
 \hypersetup{colorlinks=true, linkcolor=blue, citecolor=magenta, urlcolor=cyan}
 \usepackage{titlesec}
+\usepackage[autostyle=true]{csquotes}
 
 \titleformat{\section}
-{\normalfont\bfseries\LARGE}
+{\normalfont\bfseries\Large}
 {\thesection}{1em}{}
 \titleformat{\subsection}
-{\normalfont\bfseries\Large}
+{\normalfont\bfseries\large}
 {\thesubsection}{1em}{}
 \titleformat{\subsubsection}
-{\normalfont\itshape\bfseries\large}
+{\normalfont\itshape\bfseries}
 {\thesubsubsection}{1em}{}
 
 \theoremstyle{plain}
@@ -26,12 +27,8 @@
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
-
-\theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
-
-\theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 
 \newcommand{\R}{\mathbb{R}}
@@ -66,9 +63,9 @@
 
 \maketitle
 
-\begin{abstract}
-  These notes are compatible to the MA337 course (2025 Fall).
-\end{abstract}
+
+These notes are compatible with the MA337 course (Fall 2025).
+
 
 \clearpage
 \pagenumbering{roman}
@@ -93,12 +90,10 @@
 
 \clearpage
 
-\section{Lebesgue Measure and Integration}
-We now enter the chaper of Lebesgue measure and integration.
+\section{Measure}
+In this chapter, we embark on a journey into the fundamental concepts of measure.
 
-In this chapter, we embark on a journey into the fundamental concepts of Lebesgue measure and integration. This theory, developed by Henri Lebesgue at the beginning of the 20th century, provides a more robust and general framework for integration than the Riemann integral, allowing us to integrate a wider class of functions and providing powerful convergence theorems essential for modern analysis and probability theory. We will begin by establishing the foundational building blocks: systems of sets, such as semi-rings, rings, algebras, and $\sigma$-algebras, which provide the structure upon which measures are defined.
-
-We will then introduce the concept of a measure, focusing on $\sigma$-additivity, a crucial property that allows for the consistent measurement of infinite unions of disjoint sets. A significant part of this chapter will be dedicated to the construction of the Lebesgue measure on Euclidean spaces, starting from elementary "volumes" of semi-open cells and extending it to a much broader collection of sets through the process of outer measure and Carathéodory's extension theorem. This rigorous construction will lead us to the definition of measurable sets and measurable functions, paving the way for the development of the Lebesgue integral in subsequent chapters.
+This theory, developed by Henri Lebesgue at the beginning of the 20th century, provides a more robust and general framework for integration than the Riemann integral, allowing us to integrate a wider class of functions and providing powerful convergence theorems essential for modern analysis and probability theory. His theory was published originally in his dissertation Intégrale, longueur, aire ("Integral, length, area") at the University of Nancy during 1902.
 
 \clearpage
 
@@ -140,7 +135,7 @@ We will then introduce the concept of a measure, focusing on $\sigma$-additivity
   If $S$ is a semi-ring, then
   \begin{enumerate}
     \item $\emptyset \in S$.
-    \item Axiom 2 can be strenghtened to: $\forall A \in S$, $\forall A_1, A_2, \ldots, A_n \in S, A_j \in A, \forall j, disjoint$, there exist disjoint sets $A_{m+1}, A_{m+2}, \ldots, A_s \in S$ such that $A = \bigsqcup_{i=1}^s A_i$.
+    \item Axiom 2 can be strengthened to: $\forall A \in S$, $\forall A_1, A_2, \ldots, A_n \in S, A_j \in A, \forall j, disjoint$, there exist disjoint sets $A_{m+1}, A_{m+2}, \ldots, A_s \in S$ such that $A = \bigsqcup_{i=1}^s A_i$.
   \end{enumerate}
   \begin{proof}
     1. $\emptyset = A \setminus A. \forall A \in S$.
@@ -150,11 +145,11 @@ We will then introduce the concept of a measure, focusing on $\sigma$-additivity
 \end{proposition}
 
 \begin{remark}
-  We now show that with axiom 1 and the strenghtened condition above we could say $S$ is a semi-ring.
+  We now show that with axiom 1 and the strengthened condition above we could say $S$ is a semi-ring.
   \begin{proof}
     Now axiom 1 is satisfied.
 
-    Suppose $A, B \in S$, then $A \setminus B = A \ (A \cap B)$. Let $A_1 = B, n = 1$. By our strenghthened condition, one could find disjoint sets $A_2, A_3, \ldots, A_s \in S$, s.t. $A = \bigsqcup_{i=1}^s A_i$, i.e. $A \setminus B = \bigsqcup_{i=2}^s A_i$. $\checkmark$
+    Suppose $A, B \in S$, then $A \setminus B = A \ (A \cap B)$. Let $A_1 = B, n = 1$. By our strengthened condition, one could find disjoint sets $A_2, A_3, \ldots, A_s \in S$, s.t. $A = \bigsqcup_{i=1}^s A_i$, i.e. $A \setminus B = \bigsqcup_{i=2}^s A_i$. $\checkmark$
   \end{proof}
   Thus, we have the following equivalent definition for semi-rings.
 \end{remark}
@@ -592,7 +587,7 @@ We will then introduce the concept of a measure, focusing on $\sigma$-additivity
 \begin{example}
     (An invisible set under the outer measure)
     
-    Let $S = \{ [a,b) : a,b \in \mathbb{Q},\, a < b \}$, and define the premeasure $\mu([a,b)) = b - a$. The outer measure $\mu^*$ on $2^{\mathbb{R}}$ is defined by $\mu^*(E) = \inf\{ \sum_{j=1}^{\infty} \mu(A_j) : A_j \in S,\, E \subseteq \bigcup_{j=1}^{\infty} A_j \}$.
+    Let $S = \{ [a,b) : a,b \in \mathbb{Q},\, a < b \}$, and define the pre-measure $\mu([a,b)) = b - a$. The outer measure $\mu^*$ on $2^{\mathbb{R}}$ is defined by $\mu^*(E) = \inf \{ \sum_{j=1}^{\infty} \mu(A_j) : A_j \in S,\, E \subseteq \bigcup_{j=1}^{\infty} A_j \}$.
     
     Consider the set $E = \mathbb{Q} \cap [0,1]$. We will show that $\mu^*(E) = 1$, while $\mu^*(\{q\}) = 0$ for all $q \in E$. Hence, $\mu^*(\bigsqcup_{q\in E}\{q\}) = 1 > 0 = \sum_{q\in E}\mu^*(\{q\})$, which demonstrates that $\mu^*$ is not countably additive, even for disjoint sets.
 \end{example}
@@ -729,7 +724,7 @@ $\rightarrow$ $(\Omega, \mathcal{M}(\Omega), \mu)$, with $\mathcal{M}(\Omega)$: 
 
     $A_1, A_2 \in \mathcal{M}(\Omega)$, $\forall \eps > 0. \exists B_1, B_2 \in \mathcal{A}: \mu^*(A_1 \triangle B_1) < \eps, \mu^*(A_2 \triangle B_2) < \eps$.
 
-    $A = A_1 \bigcup A_2$, we will approxmate by $B = B_1 \bigcup B_2$.
+    $A = A_1 \bigcup A_2$, we will approximate by $B = B_1 \bigcup B_2$.
     
     Since $(A_1 \bigcup A_2) \triangle (B_1 \bigcup B_2) \subset (A_1 \bigcup B_1) \triangle (A_2 \bigcup B_2)$,
 
@@ -817,7 +812,7 @@ Conclusion: We end up with a triple ($\Omega, \mathcal{M}(\Omega), \mu$) --- (se
 
 
 \subsection{Measure Space}
-Recall: A triple ($\Omega, \mathcal{A}, \mu$) ($\mathcal{A}$ is some $\sigma$-algebra on the set $\Omega$) is called a \textbf{measure space (spcae with measure)}.
+\underline{Recall}: A triple ($\Omega, \mathcal{A}, \mu$) ($\mathcal{A}$ is some $\sigma$-algebra on the set $\Omega$) is called a \textbf{measure space (spcae with measure)}.
 
 \begin{definition}
     (Completeness of a Measure Space)
@@ -1064,6 +1059,49 @@ We get a sequence of sets $\{E_k\}$, $\forall E_k$ is closed. $\Rightarrow C_0 :
 
 
 Now, consider $\phi (x) := x + K(x)$, $\phi : [0,1] \rightarrow [0,2]$, $\phi$ is strictly increasing.
+
+
+
+
+\clearpage
+
+
+\appendix
+
+\titleformat{\section}{\large\bfseries}{Appendix \thesection}{0.75em}{}
+\titlespacing*{\section}{0pt}{1ex plus .5ex}{0.5ex}
+
+\section{Biographies of Mathematicians}
+
+\subsection{Henri Lebesgue (1875-1941)}
+
+Henri Lebesgue's father was a printer. Henri began his studies at the Collège de Beauvais, then he went to Paris where he studied first at the Lycée Saint Louis and then at the Lycée Louis-le-Grand.
+
+Lebesgue entered the École Normale Supérieure in Paris in 1894 and was awarded his teaching diploma in mathematics in 1897. For the next two years he studied in its library where he read Baire's papers on discontinuous functions and realised that much more could be achieved in this area. Later there would be considerable rivalry between Baire and Lebesgue which we refer to below. He was appointed professor at the Lycée Centrale at Nancy where he taught from 1899 to 1902. Building on the work of others, including that of Émile Borel and Camille Jordan, Lebesgue formulated the theory of measure in 1901 and in his famous paper \textit{Sur une généralisation de l'intégrale définie (On a generalization of the definite integral)}, which appeared in the \textit{Comptes Rendus} on 29 April 1901, he gave the definition of the Lebesgue integral that generalises the notion of the Riemann integral by extending the concept of the area below a curve to include many discontinuous functions. This generalisation of the Riemann integral revolutionised the integral calculus. Up to the end of the 19th century, mathematical analysis was limited to continuous functions, based largely on the Riemann method of integration.
+
+
+His contribution is one of the achievements of modern analysis which greatly expands the scope of Fourier analysis. This outstanding piece of work appears in Lebesgue's doctoral dissertation, \textit{Intégrale, longueur, aire (Integral, length, area)}, presented to the Faculty of Science in Paris in 1902, and the 130 page work was published in Milan in the Annali di Matematica in the same year. Having graduated with his doctorate, Lebesgue obtained his first university appointment when in 1902 he became mâitre de conférences in mathematics at the Faculty of Science in Rennes. This was in keeping with the standard French tradition of a young academic first having appointments in the provinces, then later gaining recognition in being appointed to a more junior post in Paris. On 3 December 1903 he married Louise-Marguerite Vallet and they had two children. However the marriage only lasted until 1916 when they were divorced.
+
+One honour which Lebesgue received at an early stage in his career was an invitation to give the Cours Peccot at the Collège de France. He did so in 1903 and then received an invitation to present the Cours Peccot two years later in 1905. Lebesgue first fell out with Baire in 1904, when Baire gave the Cours Peccot at the Collège de France, over who had the most right to teach such a course. Their rivalry turned into a more serious argument later in their lives. Lebesgue wrote two monographs \textit{Leçons sur l'intégration et la recherche des fonctions primitives (Lectures on integration and research on primitive functions)} (1904) and \textit{Leçons sur les séries trigonométriques (Lectures on trigonometric series)} (1906) which arose from these two lecture courses and served to make his important ideas more widely known. However, his work received a hostile reception from classical analysts, especially in France. In 1906 he was appointed to the Faculty of Science in Poitiers and in the following year he was named professor of mechanics there.
+
+Let us attempt to indicate the way that the Lebesgue integral enabled many of the problems associated with integration to be solved. Fourier had assumed that for bounded functions term by term integration of an infinite series representing the function was possible. From this he was able to prove that if a function was representable by a trigonometric series then this series is necessarily its Fourier series. There is a problem here, namely that a function which is not Riemann integrable may be represented as a uniformly bounded series of Riemann integrable functions. This shows that Fourier's assumption for bounded functions does not hold.
+
+In 1905 Lebesgue gave a deep discussion of the various conditions Lipschitz and Jordan had used in order to ensure that a function $f(x)$ is the sum of its Fourier series. What Lebesgue was able to show was that term by term integration of a uniformly bounded series of Lebesgue integrable functions was always valid. This now meant that Fourier's proof that if a function was representable by a trigonometric series then this series is necessarily its Fourier series became valid, since it could now be founded on a correct result regarding term by term integration of series. As Hawkins writes:-
+
+\enquote{\textit{In Lebesgue's work ... the generalised definition of the integral was simply the starting point of his contributions to integration theory. What made the new definition important was that Lebesgue was able to recognise in it an analytic tool capable of dealing with - and to a large extent overcoming - the numerous theoretical difficulties that had arisen in connection with Riemann's theory of integration. In fact, the problems posed by these difficulties motivated all of Lebesgue's major results.}}
+
+He was appointed mâitre de conférences in mathematical analysis at the Sorbonne in 1910. During the first world war he worked for the defence of France, and at this time he fell out with Borel who was doing a similar task. Lebesgue held his post at the Sorbonne until 1918 when he was promoted to Professor of the Application of Geometry to Analysis. In 1921 he was named as Professor of Mathematics at the Collège de France, a position he held until his death in 1941. He also taught at the École Supérieure de Physique et de Chimie Industrielles de la Ville de Paris between 1927 and 1937 and at the École Normale Supérieure in Sèvres.
+
+It is interesting that Lebesgue did not concentrate throughout his career on the field which he had himself started. This was because his work was a striking generalisation, yet Lebesgue himself was fearful of generalisations. He wrote:-
+
+\enquote{\textit{Reduced to general theories, mathematics would be a beautiful form without content. It would quickly die.}}
+
+Although future developments showed his fears to be groundless, they do allow us to understand the course his own work followed.
+
+He also made major contributions in other areas of mathematics, including topology, potential theory, the Dirichlet problem, the calculus of variations, set theory, the theory of surface area and dimension theory. By 1922 when he published \textit{Notice sur les travaux scientifique de M Henri Lebesgue} he had written nearly 90 books and papers. This ninety-two page work also provides an analysis of the contents of Lebesgue's papers. After 1922 he remained active, but his contributions were directed towards pedagogical issues, historical work, and elementary geometry.
+
+Lebesgue was honoured with election to many academies. He was elected to the Academy of Sciences on 29 May 1922, to the Royal Society, the Royal Academy of Science and Letters of Belgium (6 June 1931), the Academy of Bologna, the Accademia dei Lincei, the Royal Danish Academy of Sciences, the Romanian Academy of Sciences, and the Kraków Academy of Science and Letters. He was also awarded honorary doctorates from many universities. He also received a number of prizes including the Prix Houllevigue (1912), the Prix Poncelet (1914), the Prix Saintour (1917) and the Prix Petit d'Ormoy (1919).
+
 
 
 \end{document}
