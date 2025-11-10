@@ -13,13 +13,13 @@
 \usepackage[autostyle=true]{csquotes}
 
 \titleformat{\section}
-{\normalfont\bfseries\Large}
+{\normalfont\bfseries\LARGE}
 {\thesection}{1em}{}
 \titleformat{\subsection}
-{\normalfont\bfseries\large}
+{\normalfont\bfseries\Large}
 {\thesubsection}{1em}{}
 \titleformat{\subsubsection}
-{\normalfont\itshape\bfseries}
+{\normalfont\itshape\bfseries\large}
 {\thesubsubsection}{1em}{}
 
 \theoremstyle{plain}
@@ -86,18 +86,20 @@ These notes are compatible with the MA337 course (Fall 2025).
 
 \clearpage
 
-\section{Compactness}
+\section{Compactness of Sets}
 
 \clearpage
 
-\section{Measure}
+\section{General Measure Theory}
 In this chapter, we embark on a journey into the fundamental concepts of measure.
 
-This theory, developed by Henri Lebesgue at the beginning of the 20th century, provides a more robust and general framework for integration than the Riemann integral, allowing us to integrate a wider class of functions and providing powerful convergence theorems essential for modern analysis and probability theory. His theory was published originally in his dissertation Intégrale, longueur, aire ("Integral, length, area") at the University of Nancy during 1902.
+This theory, developed by Henri Lebesgue at the beginning of the 20th century, provides a more robust and general framework for integration than the Riemann integral, allowing us to integrate a wider class of functions and providing powerful convergence theorems essential for modern analysis and probability theory. His theory was published originally in his dissertation \textit{Intégrale, longueur, aire ("Integral, length, area")} at the University of Nancy during 1902.
+
+For a biography of Henri Lebesgue, please see Appendix A.1.
 
 \clearpage
 
-\subsection{Systems of Sets: Semi-rings, Rings, Algebras, $\sigma$-Algebras, Borel $\sigma$-Algebra, Measures}
+\subsection{Systems of Sets: Semi-ring, Ring, Algebra, $\sigma$-Algebra, Borel $\sigma$-Algebra}
 
 \begin{definition}
   (Semi-Ring of Sets)
@@ -112,7 +114,7 @@ This theory, developed by Henri Lebesgue at the beginning of the 20th century, p
 \end{definition}
 
 \begin{example}
-  (semi-open cells in $\R^n$)
+  (Semi-open cells in $\R^n$)
 
   $I_1, I_2, \ldots, I_n$: intervals in $\R$.
   $C:=I_1 \times I_2 \times \ldots \times I_n$ is called a \textbf{cell} in $\R^n$.
@@ -174,10 +176,10 @@ This theory, developed by Henri Lebesgue at the beginning of the 20th century, p
 
 \begin{example}
     \begin{enumerate}
-        \item (a semi-ring with unity)
+        \item (A semi-ring with unity)
         
-        The semi-ring of all semi-open cells in $\R^n$ (to be more precise, we need to add the element $\R^n$ into it) is a semi-ring with unity $\R^n$.
-        \item (a semi-ring WITHOUT a unity)
+        The semi-ring of all semi-open cells in $\R^n$ (To be more precise, we need to add the element $\R^n$ into it. For convenience, we won't clarify this much in the future. The reader should always keep this unity in mind.) is a semi-ring with unity $\R^n$.
+        \item (A semi-ring WITHOUT a unity)
         
         The semi-ring of all finite semi-open cells in $\R^n$: NO unity ($\R^n$)!
     \end{enumerate}
@@ -222,7 +224,7 @@ This theory, developed by Henri Lebesgue at the beginning of the 20th century, p
 \end{remark}
 
 \begin{example}
-  (a semi-ring but NOT a ring)
+  (A semi-ring but NOT a ring)
 
   The semi-ring of all cells in $\R^n$: not ensuring the closeness under union!
 \end{example}
@@ -234,7 +236,7 @@ This theory, developed by Henri Lebesgue at the beginning of the 20th century, p
 \end{definition}
 
 \begin{example}
-  (a ring but NOT an algebra)
+  (A ring but NOT an algebra)
 
   Consider $R = \{ A \subset \N : |A| < +\infty \}$.
   $R$ is a ring, but $\N \notin R$, which means it doesn't have a unity.
@@ -276,7 +278,13 @@ This theory, developed by Henri Lebesgue at the beginning of the 20th century, p
 \begin{definition}
   ($\sigma$-algebra)
 
-  A system of sets $\mathcal{A}$ is called a \textbf{$\sigma$-algebra} if $\mathcal{A} \subset 2^{\Omega}, \Omega \in \mathcal{A}, \mathcal{A}$ is an algebra with unity $\Omega$, and $\forall A_1, A_2, \ldots$ (finite or infinite family of sets!) with $\forall j: A_j \in \mathcal{A}$ it holds $\cup_{j=1}^{\infty} A_j \in \mathcal{A}$.
+  A system of sets $\mathcal{A}$ is called a \textbf{$\sigma$-algebra} if 
+  
+  1. $\mathcal{A} \subset 2^{\Omega}, \Omega \in \mathcal{A}$;
+  
+  2. $\mathcal{A}$ is an algebra with unity $\Omega$;
+  
+  3. $\forall A_1, A_2, \ldots$ (finite or infinite family of sets!) with $\forall j: A_j \in \mathcal{A}$ it holds $\cup_{j=1}^{\infty} A_j \in \mathcal{A}$.
 \end{definition}
 
 \begin{proposition}
@@ -294,15 +302,15 @@ This theory, developed by Henri Lebesgue at the beginning of the 20th century, p
 \end{proposition}
 
 \begin{remark}
-  \underline{Question}: We have so many seemingly equilvalent conditions for the definition of a $\sigma$-algebra, what are the least number of conditions we need to define/prove a $\sigma$-algebra?
+  \underline{Question}: What are the minimal conditions we need to define/prove a $\sigma$-algebra?
 
   \underline{Answer}: I prefer the following three minimal conditions:
 
-  1. $\Omega \in \mathcal{A}$.
+  1. Unity: $\Omega \in \mathcal{A}$.
 
-  2. If $A \in \mathcal{A}$, then $A^c = (\Omega \setminus A) \in \mathcal{A}$.
+  2. Closed under set difference: If $A \in \mathcal{A}$, then $A^c = (\Omega \setminus A) \in \mathcal{A}$.
 
-  3. If $A_1, A_2, \ldots \in \mathcal{A}$, then $\bigcup_{j=1}^\infty A_j \in \mathcal{A}$.
+  3. $\sigma$-additivity: If $A_1, A_2, \ldots \in \mathcal{A}$, then $\bigcup_{j=1}^\infty A_j \in \mathcal{A}$.
 \end{remark}
 
 \begin{proposition}
@@ -358,6 +366,17 @@ This theory, developed by Henri Lebesgue at the beginning of the 20th century, p
   Thus, an alternate definition of $\mathcal{B}(\R^d)$ is the minimum $\sigma$-algebra containing all closed sets in $\R^d$.
 \end{remark}
 
+\begin{remark}
+  In advanced probability theory, we focus on such Borel $\sigma$-algebra to study all possible events. One can find more in \textit{Foundations of the Theory of Prabability} by A.N.Kolomogorov.
+\end{remark}
+
+\clearpage
+
+
+\subsection{Measure, Measure Space}
+
+\subsubsection{Measure}
+
 \begin{definition}
   (Measure on a Semi-Ring)
 
@@ -389,7 +408,7 @@ This theory, developed by Henri Lebesgue at the beginning of the 20th century, p
 
   A finite semi-open cell $C = I_1 \times I_2 \times \ldots \times I_n$ in $\R^n$, define $\mu(C) := l(I_1) \times l(I_2) \times \ldots \times l(I_n)$, where $l(I) := $length of $I$ and we are measuring the cell's "volume".
 
-  This $\mu$ is called the \textbf{Lebesgue measure on all finite semi-open cells in $\R^n$}.
+  Such $\mu$ is called the \textbf{Lebesgue measure on all finite semi-open cells in $\R^n$}.
 \end{example}
 
 \begin{proposition}
@@ -440,27 +459,32 @@ This theory, developed by Henri Lebesgue at the beginning of the 20th century, p
   \underline{Answer}: NO!!! The key difference between a semi-ring and a ring is that: in a semi-ring $S$, the diffence between sets may not belong to $S$, which means though they could be represented as disjoint unions of sets in $S$, they do NOT have measure defined on them! Then the inequality chain cannot go forward anymore.
 \end{remark}
 
-\clearpage
+\begin{remark}
+  \underline{Upshot}: What we have done so far:
 
-\subsection{Lebesgue Extension of a $\sigma$-Additive Measure}
+  On a semi-ring $S$: we can define a finite-additive measure
+
+  $\rightarrow$ extend to the whole ring generated by $S$: $\mathcal{R}(S)$
+\end{remark}
+
+
+\subsubsection{$\sigma$-Additivive Measure}
 
 \begin{definition}
-    ($\sigma$-additivity)
+  ($\sigma$-additivity)
     
-    A measure $\mu$ on a semi-ring $S$ is called to satisfy \textbf{$\sigma$-additivity} 
-    
-    \textbf{(countable-additivity)} if for any $A \in S$, $\{A_j\}_{j=1}^{\infty} \subset S$ such that $A = \bigsqcup_{j=1}^\infty A_j$, we have
+  A measure $\mu$ on a semi-ring $S$ is called to satisfy \textbf{$\sigma$-additivity} \textbf{(countable-additivity)} if for any $A \in S$, $\{A_j\}_{j=1}^{\infty} \subset S$ such that $A = \bigsqcup_{j=1}^\infty A_j$, we have
   \(\mu(A) = \sum_{j=1}^\infty \mu(A_j).\)
 \end{definition}
 
 \begin{remark}
-    A $\sigma$-algebra is not necessarily $\sigma$-additive! 
+  \textbf{\underline{Warning}}: A $\sigma$-algebra is not necessarily $\sigma$-additive! 
     
-    Also note that $\sigma$-additivity always implies
+  Also note that $\sigma$-additivity always implies \textbf{semi-$\sigma$-additivity} (sometimes also called \textbf{subadditivity}): 
     
-    \textbf{semi-$\sigma$-additivity}: $\forall A \subset \bigcup_{j=1}^{\infty} A_j, A,A_j \in S, \mu(A) \leq \Sigma_{j=1}^{\infty}\mu(A_j)$.
+  $\forall A \subset \bigcup_{j=1}^{\infty} A_j, A,A_j \in S, \mu(A) \leq \Sigma_{j=1}^{\infty}\mu(A_j)$.
 
-    And more importantly, finite additivity implies semi-$\sigma$-additivity also!
+  And more importantly, finite additivity implies semi-$\sigma$-additivity also!
 \end{remark}
 
 \begin{example}
@@ -528,7 +552,7 @@ This theory, developed by Henri Lebesgue at the beginning of the 20th century, p
         
         Combining above, $\mu(A) = \mu(A_m^{(1)}) + \mu(A_m^{(2)}) le \sum_{j=1}^{\infty} \mu(A_j) + \mu(A_m^{(2)})$, and letting $m \to \infty$ gives $\mu(A) \le \sum_{j=1}^{\infty} \mu(A_j)$. $\checkmark$
       \end{proof}
-    \item (Finite Additivive BUT NOT $\sigma$-Additive) 
+    \item (Finitely Additivive BUT NOT $\sigma$-Additive) 
     
     Let $\Omega = (0,1) \cap \mathbb{Q}.$
     Define the collection $\mathcal{R} = \{A \subset \Omega : A \text{ is finite or co-finite in } \Omega\},$ where “co-finite” means that $\Omega \setminus A$ is finite. Then $\mathcal{R}$ is a ring, since the family of all finite or co-finite subsets of any countable set is closed under finite unions and differences.
@@ -559,8 +583,11 @@ This theory, developed by Henri Lebesgue at the beginning of the 20th century, p
 \begin{remark}
   A measure $\mu$ with $\sigma$-additivity on $S$ could extend to a measure with $\sigma$-additivity on $\mathcal{R}(S)$ by defining $\mu\left( \bigsqcup_{j=1}^m A_j \right) := \Sigma_{j=1}^m \mu(A_j)$, with $A_j \in S$: disjoint.
 
-  While $\sigma$-additivity on $\mathcal{R}(S)$ can be derived from $\sigma$-additivity on $S$, note that we also have a weaker condition satisfied: \textbf{semi-$\sigma$-additivity}, i.e. $\forall A \subset \cup_{j=1}^\infty A_j, A, A_j \in \mathcal{R}(S), \mu(A) \leq \Sigma_{j=1}^\infty \mu(A_j)$.
+  While $\sigma$-additivity of $\mu$ on $\mathcal{R}(S)$ can be derived from $\sigma$-additivity on $S$, note that we still have the weaker condition satisfied: \textbf{semi-$\sigma$-additivity}, i.e. $\forall A \subset \cup_{j=1}^\infty A_j, A, A_j \in \mathcal{R}(S), \mu(A) \leq \Sigma_{j=1}^\infty \mu(A_j)$.
 \end{remark}
+
+
+\subsubsection{Outer Measure}
 
 \begin{definition}
     (outer Lebesgue measure of a set E)
@@ -573,27 +600,29 @@ This theory, developed by Henri Lebesgue at the beginning of the 20th century, p
 \end{definition}
 
 \begin{remark}
-  The outer measure $\mu^*$ of a set $E$ always exists (may be infinite), since
+  The outer measure is to define the measure on sets outside of $S$ beased on the \textbf{pre-measure} on $S$.
+
+  The outer measure $\mu^*$ of a set $E$ \textbf{always exists} (may be infinitely many), since
 
   1. $\left\{ \Sigma_{j=1}^\infty \mu(A_j) : A_j \in S, A \subset \cup_{j=1}^\infty A_j \right\}$ at least contains $\Omega$;
 
   2. Consider the real numbers in $\left\{ \Sigma_{j=1}^\infty \mu(A_j) : A_j \in S, A \subset \cup_{j=1}^\infty A_j \right\}$, they have lower bound $0$. By the completeness of $\R$, the infimum exists.
 
-  \underline{Warning}: 
-  
-  In general, one CANNOT claim that $\mathcal{A}(S) \supset \mathcal{A}(\Omega)$. This is also the key problem of out outer measure being not able to capture all the information in the algebra generated by $\Omega$!
+  \textbf{\underline{Warning}}: In general, one CANNOT claim that $\mathcal{A}(S) \supset \mathcal{A}(\Omega)$. This is also the key problem of out outer measure being not able to capture all the information in the algebra generated by $\Omega$!
 \end{remark}
 
 \begin{example}
     (An invisible set under the outer measure)
     
-    Let $S = \{ [a,b) : a,b \in \mathbb{Q},\, a < b \}$, and define the pre-measure $\mu([a,b)) = b - a$. The outer measure $\mu^*$ on $2^{\mathbb{R}}$ is defined by $\mu^*(E) = \inf \{ \sum_{j=1}^{\infty} \mu(A_j) : A_j \in S,\, E \subseteq \bigcup_{j=1}^{\infty} A_j \}$.
+    Let $S = \{ [a,b) : a,b \in \mathbb{Q},\, a < b \}$ ($S$ is indeed a semi-ring with unity), and define the pre-measure $\mu([a,b)) = b - a$. The outer measure $\mu^*$ on $2^{\mathbb{R}}$ is defined by $\mu^*(E) = \inf \{ \sum_{j=1}^{\infty} \mu(A_j) : A_j \in S,\, E \subseteq \bigcup_{j=1}^{\infty} A_j \}$.
     
-    Consider the set $E = \mathbb{Q} \cap [0,1]$. We will show that $\mu^*(E) = 1$, while $\mu^*(\{q\}) = 0$ for all $q \in E$. Hence, $\mu^*(\bigsqcup_{q\in E}\{q\}) = 1 > 0 = \sum_{q\in E}\mu^*(\{q\})$, which demonstrates that $\mu^*$ is not countably additive, even for disjoint sets.
+    Consider the set $E = \mathbb{Q} \cap [0,1)$. We will show that $\mu^*(E) = 1$, while $\mu^*(\{q\}) = 0$ for all $q \in E$. Hence, $\mu^*(\bigsqcup_{q\in E}\{q\}) = 1 > 0 = \sum_{q\in E}\mu^*(\{q\})$, which demonstrates that $\mu^*$ is not countably additive, even for disjoint sets.
 \end{example}
 
 \begin{remark}
-This example shows that $\mu^*$ cannot "see" the internal structure of sets outside the algebra $\mathcal{A}(S)$. Although $E$ is a countable, measure-zero set in the intuitive sense, any cover of $E$ by rational half-open intervals must in fact cover the entire interval $[0,1]$. Hence, the outer measure treats $E$ as if it were as large as $[0,1]$.
+This example shows that $\mu^*$ cannot "see" the internal structure of sets outside the algebra $\mathcal{A}(S)$ (But we are still in $\mathcal{A}(\Omega)$!). Although $E$ is a countable, measure-zero set in the intuitive sense, any cover of $E$ by rational half-open intervals must in fact cover the entire interval $[0,1)$. Hence, the outer measure treats $E$ as if it were as large as $[0,1)$.
+
+\underline{A simple point of view}: We know that there is quite possible to find a set $E$ in $\mathcal{A}(\Omega) \setminus \mathcal{A}(S)$. For such set, we cannot find a quite precise covering of it, so we can only use the whole unity $\Omega$ as a part of our approximation.
 \end{remark}
 
 \begin{remark}
@@ -663,13 +692,95 @@ This example shows that $\mu^*$ cannot "see" the internal structure of sets outs
   $\Rightarrow \mu^*(\Omega \setminus E) = \mu(\Omega)$, which means that the outer measure CANNOT distinguish the counterble but sparce set $\Q^n$.
 \end{example}
 
+
+\subsubsection{Lebesgue Extension of a $\sigma$-Additive Measure on $\mathcal{A}(S)$}
+
 \begin{definition}
-  Let $S$ be a semi-ring with unity $\Omega$, and $\mu$ be a $\sigma$-additive measure on $S$. $R(S) = \mathcal{A}(S)$ --- the minimum algebra containing $S$, $\mathcal{A}(S) \subset 2^\Omega$. A set $E \subset \Omega$ is called \textbf{(Lebesgue) measurable} if $\forall \eps > 0$, $\exists B_{\eps} \in \mathcal{A}(S)$ such that $\mu^*(E \triangle B_{\eps}) < \eps.$
+  (Lebesgue Measurable)
+
+  Let $S$ be a semi-ring with unity $\Omega$, and $\mu$ be a $\sigma$-additive measure on $S$. $R(S) = \mathcal{A}(S)$ --- the minimum algebra containing $S$, $\mathcal{A}(S) \subset 2^\Omega$. 
+  
+  A set $E \subset \Omega$ is called \textbf{(Lebesgue) measurable} if and only if $\forall \eps > 0$, $\exists B_{\eps} \in \mathcal{A}(S)$ such that $\mu^*(E \triangle B_{\eps}) = \mu^*(E \setminus B_{\eps}) + \mu^*(B_{\eps} \setminus E) < \eps$, i.e. the set $E$ can be approximated by a set $B_{\eps} \in \mathcal{A}(S)$. We call such condition the \textbf{approximation property}.
 \end{definition}
 
 \begin{example}
   In this setting, let $\mu^*(E) = 0$, then $E$ is measurable: Choose $B_{\eps} = \emptyset$, then \(\mu^*(E \triangle B_{\eps}) = \mu^*(E) < \eps\).
 \end{example}
+
+\begin{definition}
+  (Lebesgue Measurable: Altanative Definition)
+
+  Let $S$ be a semi-ring with unity $\Omega$, and $\mu$ be a $\sigma$-additive measure on $S$.
+  
+  A set $E \subset \Omega$ is called \textbf{(Lebesgue) measurable} if and only if $\forall A \subset \Omega$, $\mu^*(E) = \mu^*(E \bigcap A) + \mu^*(E \setminus A)$. Such condition is called to be satisfying the \textbf{Carathéodory\footnote{For a biography of Constantin Carathéodory, please see Appendix A.2.} criterion}.
+\end{definition}
+
+\begin{theorem}
+  The two definitions above are equivalent.
+  \begin{proof}
+    Let $S$ be a semi-ring with unity $\Omega$, let $\mu_0$ be a $\sigma$-additive premeasure on $S$ (we emphasizes that this measure is the pre-measure), and let $\mu^*$ be the outer measure obtained from $S$ by the usual covering construction. 
+    
+    \(\mathcal M:=\Big\{E\subset\Omega:\ \forall X\subset\Omega,\ \mu^*(X)=\mu^*(X\cap E)+\mu^*(X\setminus E)\Big\}\) is the Carath\'eodory $\sigma$-algebra.
+    
+    \noindent\textbf{Auxiliary facts}:
+
+    (1) For all $X,E,B\subset\Omega$, we have
+    
+    $\big|\mu^*(X\cap E)-\mu^*(X\cap B)\big|\le \mu^*(E\triangle B),\qquad \big|\mu^*(X\setminus E)-\mu^*(X\setminus B)\big|\le \mu^*(E\triangle B)$, 
+    
+    which follows from monotonicity and subadditivity of $\mu^*$ (e.g.\ $X\cap E\subset (X\cap B)\cup(E\triangle B)$).
+    
+    (2) $A(S)\subset\mathcal M$: 
+    
+    First check $S\subset\mathcal M$ by the additivity of $\mu_0$ on $S$ and the definition of $\mu^*$; since $\mathcal M$ is a $\sigma$-algebra, it contains the algebra $A(S)$.
+    
+    \noindent\textbf{(Approximation $\Rightarrow$ Carath\'eodory).}Assume $E\subset\Omega$ satisfies: for every $\varepsilon>0$ there is $B_\varepsilon\in A(S)$ with $\mu^*(E\triangle B_\varepsilon)<\varepsilon$.
+    
+    Fix $X\subset\Omega$. Because $B_\varepsilon\in A(S)\subset\mathcal M$, \(\mu^*(X)\ge \mu^*(X\cap B_\varepsilon)+\mu^*(X\setminus B_\varepsilon)\).
+    
+    Applying the first auxiliary fact with $B=B_\varepsilon$ gives \(\mu^*(X)\ \ge\ \mu^*(X\cap E)+\mu^*(X\setminus E)-2\,\mu^*(E\triangle B_\varepsilon)\).
+    
+    Letting $\varepsilon\downarrow0$ yields $\mu^*(X)\ge \mu^*(X\cap E)+\mu^*(X\setminus E)$. The reverse inequality is the subadditivity of $\mu^*$, hence equality holds for all $X$, i.e.\ $E\in\mathcal M$.
+    
+    \noindent\textbf{(Carath\'eodory $\Rightarrow$ Approximation).}Assume $E\in\mathcal M$. Let $\varepsilon>0$.
+    
+    By the definition of $\mu^*$ choose a cover $E\subset\bigcup_{k\ge1} S_k$ with $S_k\in S$ such that \(\sum_{k=1}^\infty \mu_0(S_k)\le \mu^*(E)+\varepsilon/3.\)
+    
+    Write $U_N:=\bigcup_{k=1}^N S_k\in A(S)$ and $U:=\bigcup_{k\ge1} S_k$.
+    
+    Then $\mu^*(U)\le \mu^*(E)+\varepsilon/3$.
+    
+    Since $E$ is Carath\'eodory measurable and $E\subset U$, \(\mu^*(U)=\mu^*(E)+\mu^*(U\setminus E)\quad$
+    
+    $\Rightarrow\quad \mu^*(U\setminus E)\le \varepsilon/3.\)
+    
+    By semi-$\sigma$-additivity on the tail, choose $N$ so large that $\mu^*(U\setminus U_N)\le \varepsilon/3$.
+    
+    Hence \(\mu^*(U_N\setminus E)\le \mu^*(U\setminus E)+\mu^*(U\setminus U_N)\le \tfrac{2\varepsilon}{3},\qquad \mu^*(E\setminus U_N)\le \mu^*(U\setminus U_N)\le \tfrac{\varepsilon}{3}\), and therefore $\mu^*(E\triangle U_N)\le \varepsilon$.
+    
+    With $B_\varepsilon:=U_N\in A(S)$ we obtain the approximation property.
+    
+    Combining the two implications proves that the two definitions above are equivalent.
+  \end{proof}
+\end{theorem}
+
+\begin{remark}
+  \underline{Think about it}: Does such definition address our problem in the last subsubsection?
+
+  \underline{Answer}: Yes, the Carathéodory criterion directly and completely addresses this problem!
+  
+  \begin{enumerate}
+    \item \underline{It provides a filter:} The definition provides a precise condition to "sieve" the "measurable" sets from the "non-measurable" ones. A set $E$ is declared measurable if and only if it splits \emph{every} other set $A$ in an additive way with respect to the outer measure:
+    $\mu^*(A) = \mu^*(A \cap E) + \mu^*(A \setminus E)$
+
+    \item \underline{It constructs the $\sigma$-algebra:} The Carathéodory Extension Theorem (which is based on this definition) proves that the collection $\mathcal{M}$ of all sets $E$ that satisfy this criterion forms a $\sigma$-algebra.
+
+    \item \underline{It guarantees additivity:} The same theorem proves that the outer measure $\mu^*$, when restricted to this $\sigma$-algebra $\mathcal{M}$, becomes a \textbf{countably additive measure}.
+\end{enumerate}
+
+In summary, Definition 5.46 is not just an arbitrary definition; it is the precise tool needed to solve the extension problem. It successfully identifies the exact collection of sets ($\mathcal{M}$, the Lebesgue measurable sets) on which the outer measure $\mu^*$ behaves as a true, countably additive measure.
+
+\end{remark}
 
 \begin{remark}
     The definition of a (Lebesgue) measurable set captures the idea of \emph{approximability by “nice” sets}. A set $E \subset \Omega$ is called measurable if it can be arbitrarily well approximated by sets $B_\varepsilon$ from the algebra $\mathcal{A}(S)$, in the sense that the “disagreement region” between $E$ and $B_\varepsilon$, namely the symmetric difference $E \triangle B_\varepsilon$, has arbitrarily small outer measure: $\mu^*(E \triangle B_\varepsilon) < \varepsilon$ for all $\varepsilon > 0$.
@@ -683,9 +794,9 @@ This example shows that $\mu^*$ cannot "see" the internal structure of sets outs
 
 $(\Omega, S, \mu)$ --- $\Omega$ - set, $S$ - semi-ring with unity $\Omega$, $\mu$ - $\sigma$-additive measure on $S$
 
-$\rightarrow$ directly extend to $(\Omega, \mathcal{A}(S), \mu)$
+$\rightarrow$ directly extend to $(\Omega, \mathcal{A}(S), \mu)$, $\mu$: the pre-measure.
 
-$\rightarrow$ introduce $\mu^*$ on the whole $2^\Omega$
+$\rightarrow$ introduce $\mu^*$ on the whole $2^\Omega$,
 
 $\rightarrow$ $(\Omega, \mathcal{M}(\Omega), \mu)$, with $\mathcal{M}(\Omega)$: collection of all measurable sets in $\Omega$.
 
@@ -800,19 +911,14 @@ $\rightarrow$ $(\Omega, \mathcal{M}(\Omega), \mu)$, with $\mathcal{M}(\Omega)$: 
 
 Conclusion: We end up with a triple ($\Omega, \mathcal{M}(\Omega), \mu$) --- (set: $\Omega$, $\sigma$-algebra: $\mathcal{M}(\Omega)$, $\sigma$-additive measure on $\mathcal{M}(\Omega)$: $\mu$).
 
+
+\subsubsection{Measure Space}
+
 \begin{definition}
     (Measure Space)
 
     Such a triple ($\Omega, \mathcal{A}, \mu$) ($\mathcal{A}$ is some $\sigma$-algebra on the set $\Omega$) is called a \textbf{measure space (spcae with measure)}.
 \end{definition}
-
-
-
-\clearpage
-
-
-\subsection{Measure Space}
-\underline{Recall}: A triple ($\Omega, \mathcal{A}, \mu$) ($\mathcal{A}$ is some $\sigma$-algebra on the set $\Omega$) is called a \textbf{measure space (spcae with measure)}.
 
 \begin{definition}
     (Completeness of a Measure Space)
@@ -944,6 +1050,11 @@ So, essentially, $\mu$ is obtained from $\{\mu_k\}_{k=1}^{\infty}$, with each $\
 
 
 
+
+
+
+\subsubsection{Basic Intuition of Non-Measurable Sets}
+
 \begin{proposition}
   \begin{enumerate}
     \item (Shift-invariance) If $E_{\alpha} := \{x+\alpha, x\in E, \alpha \in \R^n$: fixed$\}$, then 
@@ -991,7 +1102,7 @@ So, essentially, $\mu$ is obtained from $\{\mu_k\}_{k=1}^{\infty}$, with each $\
 
 
 
-\subsection{Cantor Set}
+\subsubsection{Cantor Set}
 
 We build a sequence of sets:
 
@@ -1034,7 +1145,7 @@ We get a sequence of sets $\{E_k\}$, $\forall E_k$ is closed. $\Rightarrow C_0 :
 \clearpage
 
 
-\subsection{Cantor Staircase Function}
+\subsubsection{Cantor Staircase Function}
 
 \begin{definition}
   
@@ -1065,6 +1176,16 @@ Now, consider $\phi (x) := x + K(x)$, $\phi : [0,1] \rightarrow [0,2]$, $\phi$ i
 
 \clearpage
 
+\subsubsection{Construction of a Non-Borel Measurable Set}
+
+
+
+
+\clearpage
+
+
+
+
 
 \appendix
 
@@ -1073,7 +1194,7 @@ Now, consider $\phi (x) := x + K(x)$, $\phi : [0,1] \rightarrow [0,2]$, $\phi$ i
 
 \section{Biographies of Mathematicians}
 
-\subsection{Henri Lebesgue (1875-1941)}
+\subsection{Henri Lebesgue (1875 - 1941)}
 
 Henri Lebesgue's father was a printer. Henri began his studies at the Collège de Beauvais, then he went to Paris where he studied first at the Lycée Saint Louis and then at the Lycée Louis-le-Grand.
 
@@ -1102,6 +1223,9 @@ He also made major contributions in other areas of mathematics, including topolo
 
 Lebesgue was honoured with election to many academies. He was elected to the Academy of Sciences on 29 May 1922, to the Royal Society, the Royal Academy of Science and Letters of Belgium (6 June 1931), the Academy of Bologna, the Accademia dei Lincei, the Royal Danish Academy of Sciences, the Romanian Academy of Sciences, and the Kraków Academy of Science and Letters. He was also awarded honorary doctorates from many universities. He also received a number of prizes including the Prix Houllevigue (1912), the Prix Poncelet (1914), the Prix Saintour (1917) and the Prix Petit d'Ormoy (1919).
 
+\clearpage
+
+\subsection{Constantin Carathéodory (1873 - 1950)}
 
 
 \end{document}
