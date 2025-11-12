@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1762798568.68334 "/Users/kaichen/Desktop/MA337 Real Analysis (H)/Notes/RA.tex" "RA.pdf" "RA" 1762798569.249 0
-  "/Users/kaichen/Desktop/MA337 Real Analysis (H)/Notes/RA.tex" 1762798568.53697 76884 87da120d2d60fea8e4d71ee4e32ae62a ""
+["pdflatex"] 1762935135.6494 "/Users/kaichen/Desktop/MA337 Real Analysis (H)/Notes/RA.tex" "RA.pdf" "RA" 1762935136.22902 0
+  "/Users/kaichen/Desktop/MA337 Real Analysis (H)/Notes/RA.tex" 1762935134.65484 84089 91eff0f8f925d9c74564173503071d63 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm0700.tfm" 1136768653 1536 73da8e8f1d2a4c957d51ca133585586b ""
@@ -124,10 +124,10 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1761246260 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1761246228 3345744 29ad53b185ca22f4cf154dc2aa0d2a3d ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "RA.aux" 1762798569.18635 3531 d0dbda01d2918c6aaac21a17b539fc8a "pdflatex"
-  "RA.out" 1762798569.18683 4712 ed3a5d333fb8237b058269c6f469257c "pdflatex"
-  "RA.tex" 1762798568.53697 76884 87da120d2d60fea8e4d71ee4e32ae62a ""
-  "RA.toc" 1762798569.18704 2342 5cac107b3285716d84b13f88c4a62149 "pdflatex"
+  "RA.aux" 1762935136.1595 4056 c47e80a3d13e4acacef93efdcdd0e678 "pdflatex"
+  "RA.out" 1762935136.16027 5340 cd0f56bf8393843ef2463f9505fe21ec "pdflatex"
+  "RA.tex" 1762935134.65484 84089 91eff0f8f925d9c74564173503071d63 ""
+  "RA.toc" 1762935136.16052 2703 43bcc03cb00051f9075de8c9a8c6e4aa "pdflatex"
   (generated)
   "RA.aux"
   "RA.log"

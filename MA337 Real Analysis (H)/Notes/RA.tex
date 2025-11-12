@@ -71,14 +71,6 @@ These notes are compatible with the MA337 course (Fall 2025).
 
 \clearpage
 
-\thispagestyle{empty}
-
-\begin{center}
-  \Large\itshape “Where measure hides, structure whispers.”
-\end{center}
-
-\clearpage
-
 \pagenumbering{roman}
 
 \phantomsection
@@ -603,10 +595,14 @@ For a biography of Henri Lebesgue, please see Appendix A.1.
 
 \subsubsection{Outer Lebesgue Measure}
 
+\underline{Setting}: $S$ - semi-ring with unity $\Omega$; $\mu$ - $\sigma$-additive measure on $S$; $\mathcal{R}(S) = \mathcal{A}(S)$ - the minimum algebra containing $S$.
+
 \begin{definition}
     (outer Lebesgue measure of a set E)
     
-    Let $\mu$ be a $\sigma$-additive measure on a semi-ring $S$ with unity $\Omega$ (so, $S \subset 2^\Omega$). Let $\mathcal{R}(S) = \mathcal{A}(S)$  --- the minimum algebra containing $S$. For any $E \subset \Omega$, define
+    Let $\mu$ be a $\sigma$-additive measure on a semi-ring $S$ with unity $\Omega$ (so, $S \subset 2^\Omega$). 
+    
+    For any $E \subset \Omega$, define
     
     \[\mu^*(E) := \inf \left\{ \Sigma_{j=1}^\infty \mu(A_j) : A_j \in S, A \subset \cup_{j=1}^\infty A_j \right\}.\]
     
@@ -706,6 +702,25 @@ This example shows that $\mu^*$ cannot "see" the internal structure of sets outs
   $\Rightarrow \mu^*(\Omega \setminus E) = \mu(\Omega)$, which means that the outer measure CANNOT distinguish the counterble but sparce set $\Q^n$.
 \end{example}
 
+With such outer measure, one can similarly get:
+
+\begin{definition}
+  (Inner Lebesgue Measure of a Set E)
+
+  Let $\mu$ be a $\sigma$-additive measure on a semi-ring $S$ with unity $\Omega$ (so, $S \subset 2^\Omega$).
+
+  Based on the outer measure $\mu^*$, for any $E \subset \Omega$, define
+
+  \[\mu_*(E) = 1 - \mu^*(\Omega \setminus E)\]
+
+  Then, $\mu_*$ is called the \textbf{inner(interior) Lebesgue measure of a set E} induced by $\mu$ on $\Omega$.
+\end{definition}
+
+
+\begin{proposition}
+  $\forall E \subset \Omega, \mu_*(E) \leq \mu^*(E)$
+\end{proposition}
+
 
 \subsubsection{Lebesgue Extension of a $\sigma$-Additive Measure on $\mathcal{A}(S)$}
 
@@ -714,7 +729,7 @@ This example shows that $\mu^*$ cannot "see" the internal structure of sets outs
 
   Let $S$ be a semi-ring with unity $\Omega$, and $\mu$ be a $\sigma$-additive measure on $S$. $R(S) = \mathcal{A}(S)$ --- the minimum algebra containing $S$, $\mathcal{A}(S) \subset 2^\Omega$. 
   
-  A set $E \subset \Omega$ is called \textbf{(Lebesgue) measurable} if and only if $\forall \eps > 0$, $\exists B_{\eps} \in \mathcal{A}(S)$ such that $\mu^*(E \triangle B_{\eps}) = \mu^*(E \setminus B_{\eps}) + \mu^*(B_{\eps} \setminus E) < \eps$, i.e. the set $E$ can be approximated by a set $B_{\eps} \in \mathcal{A}(S)$. We call such condition the \textbf{approximation property}.
+  A set $E \subset \Omega$ is called \textbf{(Lebesgue) measurable} if and only if $\forall \eps > 0$, $\exists B_{\eps} \in \mathcal{A}(S)$ such that $\mu^*(E \triangle B_{\eps}) = \mu^*(E \setminus B_{\eps}) + \mu^*(B_{\eps} \setminus E) < \eps$, i.e. the set $E$ can be approximated by a set $B_{\eps} \in \mathcal{A}(S)$. We call such condition the \textbf{approximation property (or being measurable in the sense of Lebesgue)}.
 \end{definition}
 
 \begin{example}
@@ -726,7 +741,7 @@ This example shows that $\mu^*$ cannot "see" the internal structure of sets outs
 
   Let $S$ be a semi-ring with unity $\Omega$, and $\mu$ be a $\sigma$-additive measure on $S$.
   
-  A set $E \subset \Omega$ is called \textbf{(Lebesgue) measurable} if and only if $\forall A \subset \Omega$, $\mu^*(E) = \mu^*(E \bigcap A) + \mu^*(E \setminus A)$. Such condition is called to be satisfying the \textbf{Carathéodory\footnote{For a biography of Constantin Carathéodory, please see Appendix A.2.} criterion}.
+  A set $E \subset \Omega$ is called \textbf{(Lebesgue) measurable} if and only if $\forall A \subset \Omega$, $\mu^*(E) = \mu^*(E \bigcap A) + \mu^*(E \setminus A)$. Such condition is called to be satisfying the \textbf{Carathéodory\footnote{For a biography of Constantin Carathéodory, please see Appendix A.2.} criterion (or being measurable in the sense of Carathéodory)}.
 \end{definition}
 
 \begin{theorem}
@@ -779,7 +794,7 @@ This example shows that $\mu^*$ cannot "see" the internal structure of sets outs
 \end{theorem}
 
 \begin{remark}
-  \underline{Think about it}: Does such definition address our problem in the last subsubsection?
+  \underline{Think about it}: Can such definition address our problem in the last subsubsection?
 
   \underline{Answer}: Yes, the Carathéodory criterion directly and completely addresses this problem!
   
@@ -821,7 +836,9 @@ $\rightarrow$ $(\Omega, \mathcal{M}(\Omega), \mu)$, with $\mathcal{M}(\Omega)$: 
 \end{remark}
 
 \begin{theorem}
-  In the above setting, let $\mathcal{M}(S)$ be the collection of all measurable sets and we set $\mu(A) := \mu^*(A), \forall A \in M(S)$. Then,
+  (Carathéodory's Extension Theorem)
+
+  In the above setting (with pre-measure $\mu$ on $\mathcal{A}(S)$), let $\mathcal{M}(S)$ be the collection of all measurable sets and we set $\mu(A) := \mu^*(A), \forall A \in M(S)$. Then,
   \begin{enumerate}
     \item $\mathcal{M}(S)$ is a $\sigma$-algebra.
 
@@ -954,13 +971,13 @@ Conclusion: We end up with a triple ($\Omega, \mathcal{M}(\Omega), \mu$) --- (se
 \end{example}
 
 \begin{theorem}
-    For any measure space ($\Omega, \mathcal{A}, \mu$), the following holds:
+    For any measure space $(\Omega, \mathcal{A}, \mu)$, the following holds:
     \begin{enumerate}
         \item $\forall A_1 \subset A_2 \subset A_3 \subset \ldots$ with $A_i \in \mathcal{A}$, $\mu(\bigcup_{i=1}^{\infty} A_i) = \lim\limits_{i \to \infty} \mu(A_i)$.
         \item If $A_1 \supset A_2 \supset A_3 \supset \ldots$, $A_i \in \mathcal{A}$, then $\lim\limits_{i \to \infty} \mu(A_i) = \mu(\bigcap_{i=1}^{\infty} A_i)$.
     \end{enumerate}
 
-    Both $1$ and $2$ are called the \textbf{continuity} of the measure.
+    Both 1 and 2 are called the \textbf{continuity} of the measure.
 
     \begin{proof}
     
@@ -1208,7 +1225,7 @@ Now, consider $\phi (x) := x + K(x)$, $\phi : [0,1] \rightarrow [0,2]$, $\phi$ i
 \end{proposition}
 
 \begin{corollary}
-  $\forall A \in \mathcal{M}(\R^n)$, A can be decoposed as:
+  $\forall A \in \mathcal{M}(\R^n)$, A can be decomposed as:
 
   1. $A = F \bigsqcup E$, where $F$ is Borel and $E$ is measure 0;
   
@@ -1334,9 +1351,9 @@ Now, consider $\phi (x) := x + K(x)$, $\phi : [0,1] \rightarrow [0,2]$, $\phi$ i
 
 \begin{example}
   \begin{enumerate}
-    \item Dirichlet function:
-    
-    $D(x) = $
+    \item Dirichlet function: $D(x) = \begin{cases} 1, & x \in \Q, \\ 0, & x \in [0,1] \setminus \Q. \end{cases}$
+
+    One can esaily check that 
     \item One can consider \textbf{convergence a.e.}: $f_n(x) \rightarrow f(x)$ a.e.
     
     \item One can consider funtions defined a.e.:
@@ -1357,32 +1374,190 @@ Now, consider $\phi (x) := x + K(x)$, $\phi : [0,1] \rightarrow [0,2]$, $\phi$ i
 \end{lemma}
 
 \begin{theorem}
-  Let $f_n$ be a sequence of measurable fucntions on $(\Omega, \mathcal{A}, \mu)$ and $f_n(x) \rightarrow f(x)$ a.e.
-
-  Then $f(x)$ is also measurable.
+  Let $\{f_n\}_{n=1}^{\infty}$ be a sequence of measurable fucntions on $(\Omega, \mathcal{A}, \mu)$ and $f_n(x) \overset{a.e.}{\rightarrow} f(x)$. Then $f(x)$ is also measurable.
   \begin{proof}
 
   \end{proof}
 \end{theorem}
 
+\begin{corollary}
+  Let $\{f_n(x)\}$ be a sequence of measurable functions. If $f_n(x)$ is bounded from above $\forall n$ for a.e. $x \in \Omega$, then
+
+  \begin{enumerate}
+    \item $\sup\limits_{n} f_n(x)$\ is measurable;
+    \item $\limsup\limits_{n \to \infty} f_n(x)$ is measurable;
+  \end{enumerate}
+
+  If, otherwise, $f_n(x)$ is bounded from below $\forall n$ for a.e. $x \in \Omega$, then
+  \begin{enumerate}
+    \item $\inf\limits_{n} f_n(x)$ is measurable;
+    \item $\liminf\limits_{n \to \infty} f_n(x)$ is measurable.
+  \end{enumerate}
+
+  \begin{proof}
+    Consider $g_1(x) := f_1(x)$, $g_2(x) := \max\{f_1(x), f_2(x)\} = \frac{|f_1(x) - f_2(x)| + f_1(x) + f_2(x)}{2}$, $g_3(x) := \max\{f_1(x), f_2(x), f_3(x)\} = \max\{g_2(x), f_3(x)\}$, \ldots, which are all measurable by properties in the last subsubsection.
+
+    Then, $\sup\limits_{n} f_n(x) \overset{a.e.}{=} \lim\limits_{n \to \infty} g_n(x)$ is measurable.
+
+    \underline{Recall}: $\limsup\limits_{n \to \infty} a_n(x) = \sup \{$limits of convergent subsequences$\} = \lim\limits_{k \to \infty} (\sup\limits_{n \geq k} a_n(x))$.
+
+    Then, $\limsup\limits_{n \to \infty} f_n(x) = \lim\limits_{k \to \infty} (\sup\limits_{n \geq k} f_n(x))$ is measurable.
+
+    Analogously, $\inf\limits_{n} f_n(x) = - \sup\limits_{n} (-f_n(x))$ is measurable; $\liminf\limits_{n \to \infty} f_n(x) = - \limsup\limits_{n \to \infty} (-f_n(x))$ is measurable.
+  \end{proof}
+\end{corollary}
+
+\clearpage
+
+\subsubsection{Egorov's Theorem}
+
+\begin{theorem}
+  (Egorov's Theorem)
+
+  Let $(\Omega, \mathcal{A}, \mu)$ be a space with a \underline{finite} complete measure, and $\{f_n\}$ is a sequence of measurable functions with $f_n \overset{a.e.}{\rightarrow} f$.
+  
+  Then, $\forall \delta > 0$, $\exists$ a set $E_\delta \subset \Omega$ s.t. $\mu(E_\delta) < \delta$ and $f_n \overset{\Omega \setminus E_\delta}{\rightrightarrows} f$.
+
+  \begin{proof}
+    Fix $\delta > 0$. Consider the divergence set $E$ ($\mu(E) = 0$ by our assumption):
+
+    $E = \bigcup_{k \geq 1} $
+  \end{proof}
+\end{theorem}
+
+\begin{remark}
+    Intuition here: on a set with small measure, convergence may be bad; but on the rest part with large measure, convergence is uniform.
+\end{remark}
+
+\begin{remark}
+  Ths Egorov's Theorem may fail if $\mu(\Omega) = \infty$.
+
+  \underline{Counter example 1}: Take $\Omega = \R$ with Lebesgue measure, $f_n(x) = \frac{x}{n}$.
+
+  Then, $f_n(x) \overset{a.e.}{\rightarrow} 0$ on the whole real line, but $\forall E_\delta$ with finite measure, $f_n \not \rightrightarrows 0$ on $\R \setminus E_\delta$.
+
+  \underline{Counter example 2}: Take $\Omega = \R$ with Lebesgue measure, $f_n(x) = \chi_{[n, n+1]}(x)$.
+
+  Then, $f_n(x) \overset{a.e.}{\rightarrow} 0$ on the whole real line, but $\forall E_\delta$ with finite measure, $f_n \not \rightrightarrows 0$ on $\R \setminus E_\delta$.
+\end{remark}
+
+\begin{remark}
+  In Egorov's Theorem, one CANNOT take $E_\delta = 0$.
+
+  \underline{Counter example}: Take $\Omega = [0,1]$ with Lebesgue measure, $f_n(x) = x^n$.
+
+  Then, $f_n(x) \overset{a.e.}{\rightarrow} 0$ for $x \in [0,1)$ and $f(1) = 1$.
+\end{remark}
+
+\begin{proposition}
+  Let $E \subset \R$ be a closed set, $f \in \mathcal{C}(E)$. Then $\exists g \in \mathcal{C}(\R)$, s.t. $g|_E = f|_E$.
+  \begin{proof}
+    Since $E$ is closed, $\R \setminus E$ is open. So, we can write $\R \setminus E = \bigsqcup_{k=1}^{\infty} I_k$, where $I_k = (a_k, b_k)$.
+
+    On each $I_k$, we define $g$ as the linear function connecting $(a_k, f(a_k))$ and $(b_k, f(b_k))$. Explicitly, $g(x) = f(a_k) + \frac{f(b_k) - f(a_k)}{b_k - a_k}(x - a_k), x \in I_k$.
+
+    If there are some intervals which contain $\infty$ or $-\infty$, we just extend $g$ as a constant function on them.
+    
+    So, such defined $g$ is continuous on $\R$ and $g|_E = f|_E$.
+  \end{proof}
+\end{proposition}
+
+\begin{remark}
+  What's good about such linear link / extension?
+
+  Linear functions not only preserves continuity, but also linear control, which may provide us with some sort of convenience in some problems.
+\end{remark}
+
+\begin{remark}
+  This also works for $E \subset \R^n$, which requires a more complicated proof.
+\end{remark}
 
 
 
 
+\clearpage
+
+\subsubsection{Lusin's Theorem}
+
+\begin{theorem}
+  (Lusin's Theorem)
+
+  Let $f$ be a Lebesgue measurable function on $[a,b]$.
+
+  Then $\forall \delta > 0$, $\exists E_\delta$ s.t. $\mu(E_\delta) < \delta$ and $\exists$ a continuous function $g \in \mathcal{C}([a,b])$, s.t. $f|_{[a,b] \setminus E} = g|_{[a,b] \setminus E}$.
+
+  \begin{proof}
+  
+  \end{proof}
+\end{theorem}
+
+\begin{remark}
+  $[a,b]$ can be replaced by any interval $I \subset \R$.
+\end{remark}
+
+\begin{remark}
+  We could say instead of $f|_{[a,b] \setminus E} = g|_{[a,b] \setminus E}$ that $f$ is continuous on $[a,b] \setminus E$ for an open set $E$ (as follows from the proof).
+\end{remark}
+
+\begin{remark}
+  The Lusin's Theorem also holds in $\R^n$ analogously: for $f$ - measurable on an open $G \subset \R^n$.
+\end{remark}
+
+\begin{remark}
+  We still CANNOT take $E$ with $\mu(E) = 0$.
+
+  \underline{Counter Example}: $f(x) = \begin{cases} \frac{1}{x}, & x \in (0,1]; \\ 0, & x = 0 \end{cases}$
+\end{remark}
+
+\begin{theorem}
+  (Inverse Lusin's Theorem)
+
+  Let $f$ be a function on $[a,b]$ with the \textbf{Lusin property} ($\forall \delta > 0$, $\exists E_\delta : \mu(E_\delta) < \delta$ and $g_\delta \in \mathcal{C}([a,b]): f|_{[a,b] \setminus E} = g|_{[a,b] \setminus E}$).
+
+  Then $f$ is Lebesgue measurable.
+
+  So, $f$ on $[a,b]$ is Lebesgue measurable $\Leftrightarrow$ $f$ has the Lusin property.
+  \begin{proof}
 
 
 
+  \end{proof}
+\end{theorem}
+
+\begin{remark}
+  We established, in particular, that a measurable function on an interval is an a.e. limit of continuous functions.
+\end{remark}
+
+\clearpage
 
 
+\subsubsection{Convergence in Measure}
 
+\begin{definition}
+  (Convergence in Measure)
 
+  Let $f_n$ be a sequence of measurable functions on a measure space $(\Omega, \mathcal{A}, \mu)$ with a complete measure. We say that $f_n$ converges to $f$ \textbf{in measure} if $\forall \delta > 0$,
+  $$\lim_{n \to \infty} \mu(\{x \in \Omega: |f_n(x) - f(x)| \geq \delta\}) = 0.$$
 
+  In the theory of probability, this is also called \textbf{convergence in probability}. Notation: $X_n \xrightarrow{p} X$ where $X_n, X$ are all random variables.
+\end{definition}
 
 
 
 
 
 \clearpage
+
+\section{Lebesgue Integration}
+
+
+
+
+\clearpage
+
+
+
+
 \appendix
 
 \titleformat{\section}{\large\bfseries}{Appendix \thesection}{0.75em}{}

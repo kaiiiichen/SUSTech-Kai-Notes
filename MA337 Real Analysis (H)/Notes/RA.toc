@@ -19,6 +19,10 @@
 \contentsline {subsubsection}{\numberline {5.4.1}What Kind of Functions are Measurable?}{28}{subsubsection.5.4.1}%
 \contentsline {subsubsection}{\numberline {5.4.2}Properties of Measurable Functions}{29}{subsubsection.5.4.2}%
 \contentsline {subsubsection}{\numberline {5.4.3}Almost Everywhere Properties}{30}{subsubsection.5.4.3}%
-\contentsline {section}{\numberline {A}Biographies of Mathematicians}{31}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Henri Lebesgue (1875 - 1941)}{32}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.2}Constantin Carathéodory (1873 - 1950)}{35}{subsection.A.2}%
+\contentsline {subsubsection}{\numberline {5.4.4}Egorov's Theorem}{32}{subsubsection.5.4.4}%
+\contentsline {subsubsection}{\numberline {5.4.5}Lusin's Theorem}{33}{subsubsection.5.4.5}%
+\contentsline {subsubsection}{\numberline {5.4.6}Convergence in Measure}{34}{subsubsection.5.4.6}%
+\contentsline {section}{\numberline {6}Lebesgue Integration}{35}{section.6}%
+\contentsline {section}{\numberline {A}Biographies of Mathematicians}{36}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Henri Lebesgue (1875 - 1941)}{37}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Constantin Carathéodory (1873 - 1950)}{40}{subsection.A.2}%
