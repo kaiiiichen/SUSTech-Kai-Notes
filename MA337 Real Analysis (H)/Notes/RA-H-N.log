@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.24)  12 NOV 2025 16:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.24)  12 NOV 2025 23:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/kaichen/Desktop/MA337 Real Analysis (H)/Notes/RA.tex"
-(/Users/kaichen/Desktop/MA337 Real Analysis (H)/Notes/RA.tex
+**"/Users/kaichen/Desktop/MA337 Real Analysis (H)/Notes/RA-H-N.tex"
+(/Users/kaichen/Desktop/MA337 Real Analysis (H)/Notes/RA-H-N.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -359,8 +359,8 @@ Package csquotes Warning: No multilingual support.
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count311
 \l__pdf_internal_box=\box61
-) (./RA.aux)
-\openout1 = `RA.aux'.
+) (./RA-H-N.aux)
+\openout1 = `RA-H-N.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
 LaTeX Font Info:    ... okay on input line 60.
@@ -441,9 +441,9 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: pdftex.def on input line 149.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx))
 Package hyperref Info: Link coloring ON on input line 60.
- (./RA.out) (./RA.out)
+ (./RA-H-N.out) (./RA-H-N.out)
 \@outlinefile=\write3
-\openout3 = `RA.out'.
+\openout3 = `RA-H-N.out'.
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 67.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -467,9 +467,9 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 [1{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] (./RA.toc)
+{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] (./RA-H-N.toc)
 \tf@toc=\write4
-\openout4 = `RA.toc'.
+\openout4 = `RA-H-N.toc'.
 
 
 
@@ -495,7 +495,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.87 \clearpage
+l.91 \clearpage
                 [1
 
 ]
@@ -545,27 +545,27 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 110.
+(hyperref)                removing `math shift' on input line 131.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 110.
+(hyperref)                removing `\sigma' on input line 131.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 110.
+(hyperref)                removing `math shift' on input line 131.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 110.
+(hyperref)                removing `math shift' on input line 131.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 110.
+(hyperref)                removing `\sigma' on input line 131.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 110.
+(hyperref)                removing `math shift' on input line 131.
 
 
 
@@ -628,18 +628,18 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 477.
+(hyperref)                removing `math shift' on input line 498.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 477.
+(hyperref)                removing `\sigma' on input line 498.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 477.
+(hyperref)                removing `math shift' on input line 498.
 
 
-Overfull \hbox (8.6482pt too wide) in paragraph at lines 482--484
+Overfull \hbox (8.6482pt too wide) in paragraph at lines 503--505
 []\OT1/cmr/m/it/12 A mea-sure $\OML/cmm/m/it/12 ^^V$ \OT1/cmr/m/it/12 on a semi-ring $\OML/cmm/m/it/12 S$ \OT1/cmr/m/it/12 is called to sat-isfy $\OML/cmm/m/it/12 ^^[$\OT1/cmr/bx/it/12 -additivity (countable-additivity)
  []
 
@@ -691,23 +691,23 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 [16]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 725.
+(hyperref)                removing `math shift' on input line 746.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 725.
+(hyperref)                removing `\sigma' on input line 746.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 725.
+(hyperref)                removing `math shift' on input line 746.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 725.
+(hyperref)                removing `math shift' on input line 746.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 725.
+(hyperref)                removing `math shift' on input line 746.
 
 
 
@@ -719,7 +719,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
 
 [17]
-Overfull \hbox (9.05566pt too wide) in paragraph at lines 776--777
+Overfull \hbox (9.05566pt too wide) in paragraph at lines 797--798
 []\OT1/cmr/m/n/12 By the def-i-ni-tion of $\OML/cmm/m/it/12 ^^V[]$ \OT1/cmr/m/n/12 choose a cover $\OML/cmm/m/it/12 E \OMS/cmsy/m/n/12 ^^Z [][] \OML/cmm/m/it/12 S[]$ \OT1/cmr/m/n/12 with $\OML/cmm/m/it/12 S[] \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 S$ \OT1/cmr/m/n/12 such that $[][] \OML/cmm/m/it/12 ^^V[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 S[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^T
  []
 
@@ -771,15 +771,15 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 [22]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1072.
+(hyperref)                removing `math shift' on input line 1093.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1072.
+(hyperref)                removing `superscript' on input line 1093.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1072.
+(hyperref)                removing `math shift' on input line 1093.
 
 
 
@@ -870,7 +870,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 [30
 
 ]
-Overfull \hbox (14.21806pt too wide) in paragraph at lines 1406--1407
+Overfull \hbox (14.21806pt too wide) in paragraph at lines 1427--1428
 []\OT1/cmr/m/n/12 Analogously, $[] \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ))$ is mea-sur-able; $[] \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ))$
  []
 
@@ -997,7 +997,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
 
 [42]
-Overfull \hbox (5.24544pt too wide) in paragraph at lines 1652--1653
+Overfull \hbox (5.24544pt too wide) in paragraph at lines 1673--1674
 []\OT1/cmr/m/n/12 He su-per-vised two doc-toral stu-dents at G^^?ottingen (Hans Rademacher and Paul Finsler),
  []
 
@@ -1010,24 +1010,24 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
 
-[43] (./RA.aux)
+[43] (./RA-H-N.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-Package rerunfilecheck Info: File `RA.out' has not changed.
-(rerunfilecheck)             Checksum: CD0F56BF8393843EF2463F9505FE21EC;5340.
+Package rerunfilecheck Info: File `RA-H-N.out' has not changed.
+(rerunfilecheck)             Checksum: 88496CC8E44E346C834755CD72FAD4A7;5340.
  ) 
 Here is how much of TeX's memory you used:
  12513 strings out of 473190
- 191531 string characters out of 5715799
- 612342 words of memory out of 5000000
+ 191627 string characters out of 5715799
+ 612362 words of memory out of 5000000
  35338 multiletter control sequences out of 15000+600000
  573112 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,14n,79p,1309b,783s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,14n,79p,1313b,783s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on RA.pdf (45 pages, 369988 bytes).
+Output written on RA-H-N.pdf (45 pages, 370113 bytes).
 PDF statistics:
  735 PDF objects out of 1000 (max. 8388607)
  639 compressed objects within 7 object streams
