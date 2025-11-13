@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1762960621.40664 "/Users/kaichen/Desktop/MA337 Real Analysis (H)/Notes/RA-H-N.tex" "RA-H-N.pdf" "RA-H-N" 1762960621.98291 0
-  "/Users/kaichen/Desktop/MA337 Real Analysis (H)/Notes/RA-H-N.tex" 1762960620.64714 84246 2d1cf05a06f6da09f57b7eb122f1925d ""
+["pdflatex"] 1763053204.56494 "/Users/kaichen/Desktop/MA337 Real Analysis (H)/Notes/RA-H-N.tex" "RA-H-N.pdf" "RA-H-N" 1763053205.20996 0
+  "/Users/kaichen/Desktop/MA337 Real Analysis (H)/Notes/RA-H-N.tex" 1763053203.7315 84640 2770f8374fc926e7664bbbc645c707ba ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm0700.tfm" 1136768653 1536 73da8e8f1d2a4c957d51ca133585586b ""
@@ -124,10 +124,12 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1761246260 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1761246228 3345744 29ad53b185ca22f4cf154dc2aa0d2a3d ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "RA-H-N.aux" 1762960621.91725 4056 8472484004de5b27665910968887ee19 "pdflatex"
-  "RA-H-N.out" 1762960621.91796 5340 88496cc8e44e346c834755cd72fad4a7 "pdflatex"
-  "RA-H-N.tex" 1762960620.64714 84246 2d1cf05a06f6da09f57b7eb122f1925d ""
-  "RA-H-N.toc" 1762960621.91816 2703 d41adf05e142d529d4c494c50253052d "pdflatex"
+  "RA-H-N.aux" 1763053205.14418 4454 33f8ea165b84a179209be4b0e4ee9ee9 "pdflatex"
+  "RA-H-N.out" 1763053205.14478 5340 88496cc8e44e346c834755cd72fad4a7 "pdflatex"
+  "RA-H-N.tex" 1763053203.7315 84640 2770f8374fc926e7664bbbc645c707ba ""
+  "RA-H-N.toc" 1763053205.14501 2703 d41adf05e142d529d4c494c50253052d "pdflatex"
+  "images/cantor-set.png" 1763028018.05711 84727 da8894410b29c9d126519a6b83ea9dbd ""
+  "images/cantor-staircase.png" 1763027903.55161 38005 07ec6cf720d7dfc812d04f76ddf8f7e2 ""
   (generated)
   "RA-H-N.aux"
   "RA-H-N.log"

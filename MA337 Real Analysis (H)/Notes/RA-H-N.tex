@@ -46,7 +46,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[C]{MA337 Real Analysis (H) Notes}
-\fancyfoot[R]{\hyperref[mytoc]{\large $\hookleftarrow$}}
+\fancyfoot[R]{\hyperref[mytoc]{\Large $\hookleftarrow$}}
 \fancyfoot[C]{\thepage}
 \setlength{\headheight}{14pt}
 \setlength{\headsep}{20pt}
@@ -757,6 +757,10 @@ With such outer measure, one can similarly get:
   In this setting, let $\mu^*(E) = 0$, then $E$ is measurable: Choose $B_{\eps} = \emptyset$, then \(\mu^*(E \triangle B_{\eps}) = \mu^*(E) < \eps\).
 \end{example}
 
+\begin{theorem}
+  
+\end{theorem}
+
 \begin{definition}
   (Lebesgue Measurable: Altanative Definition)
 
@@ -1177,6 +1181,13 @@ We get a sequence of sets $\{E_k\}$, $\forall E_k$ is closed. $\Rightarrow C_0 :
   Such $C_0$ is called a \textbf{(standard) Cantor set}.
 \end{definition}
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/cantor-set.png}
+    \caption{Cantor Set}
+    \label{fig:cantor-set}
+\end{figure}
+
 \begin{proposition}
   \begin{enumerate}
     \item $C_0$ is compact and $C_0 \subset [0,1]$;
@@ -1203,6 +1214,12 @@ We get a sequence of sets $\{E_k\}$, $\forall E_k$ is closed. $\Rightarrow C_0 :
   
 \end{definition}
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/cantor-staircase.png}
+    \caption{Cantor Staircase Function}
+    \label{fig:cantor-staircase}
+\end{figure}
 
 \begin{lemma}
   Let $f: \Omega \rightarrow \Omega^{\prime}, S^{\prime} \subset 2^{\Omega^{\prime}}$, then $\mathcal{A}(f^{-1}*(S^{\prime})) = f^{-1}(\mathcal{A}(S^{\prime}))$.
