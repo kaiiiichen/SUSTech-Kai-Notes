@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.24)  14 NOV 2025 01:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.24)  15 NOV 2025 14:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -627,19 +627,28 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 ]
 
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
+
+[12]
+
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 498.
+(hyperref)                removing `math shift' on input line 500.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 498.
+(hyperref)                removing `\sigma' on input line 500.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 498.
+(hyperref)                removing `math shift' on input line 500.
 
 
-Overfull \hbox (8.6482pt too wide) in paragraph at lines 503--505
+Overfull \hbox (8.6482pt too wide) in paragraph at lines 505--507
 []\OT1/cmr/m/it/12 A mea-sure $\OML/cmm/m/it/12 ^^V$ \OT1/cmr/m/it/12 on a semi-ring $\OML/cmm/m/it/12 S$ \OT1/cmr/m/it/12 is called to sat-isfy $\OML/cmm/m/it/12 ^^[$\OT1/cmr/bx/it/12 -additivity (countable-additivity)
  []
 
@@ -652,16 +661,9 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
 
-[12]
+[13
 
-
-Package fancyhdr Warning: \headheight is too small (14.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
-
-[13]
+]
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -688,28 +690,9 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
 
-[16]
+[16
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 746.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 746.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 746.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 746.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 746.
-
-
+]
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -719,11 +702,6 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
 
 [17]
-Overfull \hbox (9.05566pt too wide) in paragraph at lines 801--802
-[]\OT1/cmr/m/n/12 By the def-i-ni-tion of $\OML/cmm/m/it/12 ^^V[]$ \OT1/cmr/m/n/12 choose a cover $\OML/cmm/m/it/12 E \OMS/cmsy/m/n/12 ^^Z [][] \OML/cmm/m/it/12 S[]$ \OT1/cmr/m/n/12 with $\OML/cmm/m/it/12 S[] \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 S$ \OT1/cmr/m/n/12 such that $[][] \OML/cmm/m/it/12 ^^V[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 S[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^T
- []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -734,6 +712,27 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 [18]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 752.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sigma' on input line 752.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 752.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 752.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 752.
+
+
+
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -741,7 +740,14 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
 
-[19]
+[19
+
+]
+Overfull \hbox (9.05566pt too wide) in paragraph at lines 821--822
+[]\OT1/cmr/m/n/12 By the def-i-ni-tion of $\OML/cmm/m/it/12 ^^V[]$ \OT1/cmr/m/n/12 choose a cover $\OML/cmm/m/it/12 E \OMS/cmsy/m/n/12 ^^Z [][] \OML/cmm/m/it/12 S[]$ \OT1/cmr/m/n/12 with $\OML/cmm/m/it/12 S[] \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 S$ \OT1/cmr/m/n/12 such that $[][] \OML/cmm/m/it/12 ^^V[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 S[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^T
+ []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -770,19 +776,6 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 [22]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1097.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1097.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1097.
-
-
-
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -793,12 +786,6 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 [23
 
 ]
-<images/cantor-set.png, id=424, 964.60374pt x 427.5975pt>
-File: images/cantor-set.png Graphic file (type png)
-<use images/cantor-set.png>
-Package pdftex.def Info: images/cantor-set.png  used on input line 1186.
-(pdftex.def)             Requested size: 271.7835pt x 120.4768pt.
-
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -807,14 +794,19 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
 
-[24
+[24]
 
- <./images/cantor-set.png>]
-<images/cantor-staircase.png, id=439, 466.74374pt x 489.83pt>
-File: images/cantor-staircase.png Graphic file (type png)
-<use images/cantor-staircase.png>
-Package pdftex.def Info: images/cantor-staircase.png  used on input line 1219.
-(pdftex.def)             Requested size: 271.7835pt x 285.23767pt.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1119.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 1119.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1119.
+
 
 
 
@@ -826,7 +818,25 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 [25
 
- <./images/cantor-staircase.png>]
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1185.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1185.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1185.
+
+<images/cantor-set.png, id=448, 964.60374pt x 427.5975pt>
+File: images/cantor-set.png Graphic file (type png)
+<use images/cantor-set.png>
+Package pdftex.def Info: images/cantor-set.png  used on input line 1210.
+(pdftex.def)             Requested size: 271.7835pt x 120.4768pt.
+
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -837,7 +847,12 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 [26
 
-]
+ <./images/cantor-set.png>]
+Overfull \hbox (35.18416pt too wide) in paragraph at lines 1241--1242
+[]\OT1/cmr/m/it/12 For each $\OML/cmm/m/it/12 n \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 N$ \OT1/cmr/m/it/12 let $\OML/cmm/m/it/12 A[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OT1/cmr/m/n/12 [0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1] : []\OML/cmm/m/it/12 n[]x[]\OT1/cmr/m/n/12 5\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 :$ 
+ []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -846,9 +861,13 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
 
-[27
+[27]
+<images/cantor-staircase.png, id=475, 466.74374pt x 489.83pt>
+File: images/cantor-staircase.png Graphic file (type png)
+<use images/cantor-staircase.png>
+Package pdftex.def Info: images/cantor-staircase.png  used on input line 1266.
+(pdftex.def)             Requested size: 271.7835pt x 285.23767pt.
 
-]
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -859,7 +878,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 [28
 
-]
+ <./images/cantor-staircase.png>]
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -882,11 +901,6 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 [30
 
 ]
-Overfull \hbox (14.21806pt too wide) in paragraph at lines 1444--1445
-[]\OT1/cmr/m/n/12 Analogously, $[] \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ))$ is mea-sur-able; $[] \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ))$
- []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -895,7 +909,9 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
 
-[31]
+[31
+
+]
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -918,6 +934,11 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 [33
 
 ]
+Overfull \hbox (14.21806pt too wide) in paragraph at lines 1491--1492
+[]\OT1/cmr/m/n/12 Analogously, $[] \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ))$ is mea-sur-able; $[] \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ))$
+ []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -926,9 +947,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
 
-[34
-
-]
+[34]
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -970,7 +989,9 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
 
-[38]
+[38
+
+]
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -979,7 +1000,9 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
 
-[39]
+[39
+
+]
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -1009,7 +1032,36 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
 
 [42]
-Overfull \hbox (5.24544pt too wide) in paragraph at lines 1690--1691
+
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
+
+[43
+
+]
+
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
+
+[44]
+
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
+
+[45]
+Overfull \hbox (5.24544pt too wide) in paragraph at lines 1737--1738
 []\OT1/cmr/m/n/12 He su-per-vised two doc-toral stu-dents at G^^?ottingen (Hans Rademacher and Paul Finsler),
  []
 
@@ -1022,27 +1074,49 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
 
-[43] (./RA-H-N.aux)
+[46]
+
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
+
+[47
+
+]
+
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
+
+[48
+
+] (./RA-H-N.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `RA-H-N.out' has not changed.
-(rerunfilecheck)             Checksum: 88496CC8E44E346C834755CD72FAD4A7;5340.
+(rerunfilecheck)             Checksum: 7DEDAD2F8884BD0389C47279CC5D32BE;5917.
  ) 
 Here is how much of TeX's memory you used:
- 12535 strings out of 473190
- 192193 string characters out of 5715799
- 612443 words of memory out of 5000000
- 35357 multiletter control sequences out of 15000+600000
- 573112 words of font info for 95 fonts, out of 8000000 for 9000
+ 12551 strings out of 473190
+ 192368 string characters out of 5715799
+ 612476 words of memory out of 5000000
+ 35360 multiletter control sequences out of 15000+600000
+ 573420 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,14n,79p,1313b,783s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on RA-H-N.pdf (45 pages, 423243 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on RA-H-N.pdf (50 pages, 453085 bytes).
 PDF statistics:
- 745 PDF objects out of 1000 (max. 8388607)
- 645 compressed objects within 7 object streams
- 254 named destinations out of 1000 (max. 500000)
- 235 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 802 PDF objects out of 1000 (max. 8388607)
+ 693 compressed objects within 7 object streams
+ 266 named destinations out of 1000 (max. 500000)
+ 251 words of extra memory for PDF output out of 10000 (max. 10000000)
 
