@@ -1,4 +1,4 @@
-# STA203 Foudation of Probability Theory
+# STA203 Foudation of Probability Theory (Fall 2024)
 
 ### by Prof. [Zhuosong Zhang](https://faculty.sustech.edu.cn/?tagid=zhangzs3&iscss=1&snapid=1&orderby=date&go=2)
 
