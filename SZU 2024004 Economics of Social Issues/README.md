@@ -1,6 +1,6 @@
 # SZU2024004 Economics of Social Issues (Spring 2025)
 
-### by Prof. [Ling He](https://bs.szu.edu.cn/teachers/profile56f0.html?articleId=articleId2499&articleId=articleId231&articleId=articleId361&article62/2614.html)
+### by Prof. [Ling He](https://eco.szu.edu.cn/info/1033/1144.htm)
 
 I took this course as a general-education-level course in Shenzhen University(Lihu Campus) in Spring 2025 as an "exchange student"(跨校课程互选计划).
 
