@@ -1,4 +1,4 @@
-# SZU2024004 Economics of Social Issues (Spring 2025)
+# SZU 2024004 Economics of Social Issues (Spring 2025)
 
 ### by Prof. [Ling He](https://eco.szu.edu.cn/info/1033/1144.htm)
 
