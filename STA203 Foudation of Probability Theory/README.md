@@ -4,6 +4,6 @@
 
 Another undergraduate level course in probability theory but delivered through the statistics department.
 
-I didn't take this course. I took [MA215 Probability Theory](https://github.com/kaichen2005/SUSTech-Kai-Notes/tree/main/MA215%20Probability%20Theory) delivered by the Math Department. 
+I didn't take this course. I took [MA215 Probability Theory](https://github.com/kaiiiichen/SUSTech-Kai-Notes/tree/main/MA215%20Probability%20Theory) delivered by the Math Department. 
 
 All these metarials are collected by Prof. Guoliang Tian.
