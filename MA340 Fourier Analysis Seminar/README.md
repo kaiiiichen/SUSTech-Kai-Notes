@@ -6,4 +6,4 @@ This is the second seminar I took in SUSTech. It should have been a real course 
 
 We base on Stein's **'Princeton Lecture In Analysis I: Fourier Analysis'**
 
-Listed above is the .tex/.pdf file of a small talk I gave on the seminar.
+Listed above is the `.tex`/`.pdf` file of a small talk I gave on the seminar.
